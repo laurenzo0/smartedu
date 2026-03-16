@@ -13,7 +13,7 @@ function App() {
     setLoading(true);
 
     try {
-      // Send a POST request to your backend
+      // Send a POST request to backend
       const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
@@ -34,7 +34,7 @@ function App() {
         throw new Error(data.message || "Invalid email or password");
       }
 
-      // Successful login logic goes here (e.g., saving token, redirecting)
+    
       console.log("Login success:", data);
       alert("Logged in successfully!");
 
