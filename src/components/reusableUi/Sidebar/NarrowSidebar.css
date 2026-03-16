@@ -1,0 +1,61 @@
+/* Sidebar container */
+.ns-sidebar{
+  width:60px;                 /* narrower sidebar */
+  height:100vh;
+  background:#ffffff;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding-top:20px;
+
+  /* subtle shadow on right */
+  box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+}
+
+/* logo section */
+.ns-logo{
+  margin-bottom:30px;
+}
+
+.ns-logo img{
+  width:40px;
+}
+
+/* menu item row */
+.ns-menu-item{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  margin-bottom:25px;
+  cursor:pointer;
+}
+
+/* slider (ruler) */
+.ns-slider{
+  position:absolute;
+  left:0px;              /* closer to the icon */
+  width:3px;
+  height:30px;
+  background:transparent;
+  border-radius:3px;
+  transition:0.25s;
+}
+
+/* icon */
+.ns-icon{
+  font-size:15px;
+  color:#6b6b6b;
+  transition:0.25s;
+}
+
+/* hover effects */
+.ns-menu-item:hover .ns-slider{
+  background:#1e73d8;
+}
+
+.ns-menu-item:hover .ns-icon{
+  color:#1e73d8;
+}

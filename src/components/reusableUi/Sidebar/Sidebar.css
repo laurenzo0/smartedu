@@ -1,0 +1,84 @@
+.sidebar{
+  width:140px;
+  height:100vh;
+  background:white;
+  display:flex;
+  flex-direction:column;
+  padding-top:20px;
+    /* subtle shadow on right */
+  box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+}
+
+/* logo */
+.logo-section{
+  display:flex;
+  align-items:center;
+  padding-left:20px;
+  margin-bottom:30px;
+}
+
+.logo-section img{
+  width:110px;
+}
+
+/* menu row */
+.menu-item{
+  display:flex;
+  align-items:center;
+  cursor:pointer;
+  margin-bottom:8px;
+}
+
+/* blue slider */
+.slider{
+  width:4px;
+  height:40px;
+  background:transparent;
+  transition:0.25s;
+}
+
+/* icon + text area */
+.icon-area{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding-top:1px;
+  padding-left: 0px;
+  padding-right: 30px;
+  padding-bottom: 1px;
+  margin-left:12px; /* creates white space after slider */
+
+ 
+
+  background:transparent;
+  transition:0.25s;
+}
+
+/* icons */
+.icon{
+  font-size:15px;
+  color:#555;
+}
+
+/* text */
+.text{
+  font-size:12px;
+  color:#555;
+}
+
+/* hover slider */
+.menu-item:hover .slider{
+  background:#1e73d8;
+}
+
+/* hover background (very light) */
+.menu-item:hover .icon-area{
+  background:rgba(30,115,216,0.07);
+}
+
+/* hover text + icon */
+.menu-item:hover .icon,
+.menu-item:hover .text{
+  color:#1e73d8;
+}
