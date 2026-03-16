@@ -1,0 +1,14 @@
+body {
+  background-color:#fafbfd ;
+}
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.main-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
