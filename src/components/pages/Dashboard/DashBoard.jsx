@@ -8,8 +8,8 @@ const DashBoard = () => {
         <Navbar />
         <div className="test">
             <div className="test-content">
-            <h2>Welcome back, {} Aragon</h2>
-            <p>Knowledge is the to tomorrow, so keep growing and <br /> exploring everyday </p>
+            <h2>Welcome back, Aragon</h2>
+            <p>Knowledge is the key to tomorrow, so keep growing and <br /> exploring everyday </p>
             </div>
         </div>
         <h3 className="dash-text">Current running subjects</h3>

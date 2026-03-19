@@ -53,16 +53,51 @@ function App() {
           </div>
         );
       case "dashboard":
-        return <DashBoard onNavigate={setCurrentPage} />;
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
+            <div className="main-section">
+              <DashBoard onNavigate={setCurrentPage} />
+            </div>
+          </div>
+        );
       case "practice":
-        return <PracticePage onNavigate={setCurrentPage} />;
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
+            <div className="main-section">
+              <PracticePage onNavigate={setCurrentPage} />
+            </div>
+          </div>
+        );
       case "english":
-        return <EngLearn onNavigate={setCurrentPage} />;
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
+            <div className="main-section">
+              <EngLearn onNavigate={setCurrentPage} />
+            </div>
+          </div>
+        );
       case "maths":
-        return <MathsLearn onNavigate={setCurrentPage} />;
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
+            <div className="main-section">
+              <MathsLearn onNavigate={setCurrentPage} />
+            </div>
+          </div>
+        );
       default:
         // Default to dashboard or login depending on flow
-        return <DashBoard onNavigate={setCurrentPage} />;
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
+            <div className="main-section">
+              <DashBoard onNavigate={setCurrentPage} />
+            </div>
+          </div>
+        );
     }
   };
 

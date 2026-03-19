@@ -156,7 +156,7 @@ function Signup({ onNavigate }) {
               />
             </div>
 
-            <button type="submit" className="signup-btn">
+            <button type="submit" className="signup-btn" onClick={() => onNavigate("dashboard")}>
               Sign Up
             </button>
           </form>
