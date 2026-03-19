@@ -1,125 +1,107 @@
 .btn {
-  border: none;
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-radius: 12px;
+  font-family: inherit;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
-  display: flex;
-  margin: 10px;
-  margin-left: 600px;
-}
-
-.btn{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 16px;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-  font-size:16px;
-}
-
-/* Unique student button */
-.student-btn{
-  background-color:blue;
-  color:white;
-}
-
-.student-btn .icon{
-  color:white;
-}
-
-/* Blue Button (GET STARTED) */
-.primary {
-  background-color: #005ed2;
-  color: #fafbfd;
-
-}
-
-/* Green Buttons (Submit, Complete, Sign Up) */
-.success {
-  background-color: #29862b;
-  color: #fafbfd ;
-  text-align: center;
-  width: 150px;
-  height: 40px;
-  align-items: center;
-  justify-content: center;
-}
-
-.complete {
-    background-color: #29862b;
-    color: #fafbfd ;
-    text-align: center;
-    width: 160px;
-    height: 35px;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Long Reset Password Button */
-.long {
-  background-color: #2e7d32;
-  color:  #fafbfd;
-}
-
-/* Base button style (if not already defined) */
-.btn{
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
-  cursor: pointer;
-  font-size: 14px;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-/* GET STARTED button */
-.btn.started-btn{
-  width: 160px;
-  height: 40px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 21px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-weight: 600;
-
-  /* subtle shadow */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+.btn:disabled {
+  opacity: 0.6;
+  cursor:not-allowed;
 }
 
-/* Reset Password Button */
-.btn.reset-password-btn{
-  width: 300px;
-  height: 35px;
-  background-color: green;
+/* Variants */
+.btn-primary {
+  background: linear-gradient(135deg, #1263E1 0%, #064BB6 100%);
   color: white;
-  border-radius: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-weight: 600;
-
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 15px rgba(18, 99, 225, 0.3);
 }
 
-/* Sign Up Button */
-.btn.signup-btn{
-  width: 110px;
-  height: 40px;
-  background-color: green;
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(18, 99, 225, 0.4);
+  background: linear-gradient(135deg, #1a73ff 0%, #085ad4 100%);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: white;
+  color: #16264A;
+  border: 2px solid #E2E8F0;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #F8FAFC;
+  border-color: #CBD5E1;
+  transform: translateY(-1px);
+}
+
+.btn-live-preview {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
   color: white;
-  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
 
+.btn-live-preview:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+/* Sizes */
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.btn-medium {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Micro-animations */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: transform 0.5s;
+}
+
+.btn:active::after {
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 0;
+  transition: 0s;
+}
+
+.btn-icon {
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-weight: 600;
-
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  font-size: 1.25em;
 }
