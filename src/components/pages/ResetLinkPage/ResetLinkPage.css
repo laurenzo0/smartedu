@@ -1,0 +1,76 @@
+.reset-link-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #F8FAFC;
+  position: relative;
+}
+
+.reset-link-header {
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.reset-link-header img {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.reset-link-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 3rem;
+  text-align: center;
+}
+
+.reset-link-text {
+  font-size: 1.25rem;
+  color: #475569;
+  font-weight: 500;
+  margin: 0;
+}
+
+.reset-url-link {
+  font-size: 1rem;
+  color: #2D9CDB;
+  text-decoration: underline;
+  cursor: pointer;
+  word-break: break-all;
+  max-width: 800px;
+  line-height: 1.5;
+  transition: color 0.2s;
+}
+
+.reset-url-link:hover {
+  color: #1A73E8;
+}
+
+.reset-link-footer {
+  text-align: center;
+  padding: 2rem;
+  color: #64748B;
+  font-size: 0.9rem;
+}
+
+.footer-brand {
+  color: #F2994A;
+  font-weight: 500;
+}

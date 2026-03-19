@@ -1,4 +1,3 @@
-import logo2 from "../../../assets/logo1.png";
 import "./NarrowSidebar.css";
 import { FaThLarge, FaBook, FaFileAlt, FaChartBar, FaUser, FaEllipsisH } from "react-icons/fa";
 
@@ -8,7 +7,7 @@ function NarrowSidebar() {
 
       {/* Logo */}
       <div className="ns-logo">
-        <img src={logo2} alt="Logo" />
+        <img src="/assets/logo1.png" alt="Logo" />
       </div>
 
       {/* Menu Icons */}

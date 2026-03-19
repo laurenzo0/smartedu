@@ -1,0 +1,295 @@
+.report-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #F8FAFC;
+}
+
+/* Top Navigation Bar */
+.report-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: white;
+  border-bottom: 1px solid #E5EAF0;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #F1F5F9;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  width: 400px;
+}
+
+.search-icon {
+  color: #94A3B8;
+  margin-right: 0.8rem;
+}
+
+.search-container input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.95rem;
+  width: 100%;
+  color: #1E293B;
+}
+
+.action-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748B;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: white;
+}
+
+.icon-box:hover {
+  background-color: #F1F5F9;
+  color: #0F62FE;
+}
+
+/* Main Content Area */
+.report-content {
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+/* My Result Section */
+.my-result-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.result-header {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.user-profile-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  gap: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  background-color: #D1D5DB;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.user-details h2 {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0 0 0.2rem 0;
+}
+
+.detail-row {
+  font-size: 0.85rem;
+  color: #94A3B8;
+  margin: 0;
+}
+
+.detail-row span {
+  color: #64748B;
+  margin-left: 0.3rem;
+}
+
+/* Correctly Answered Questions Section */
+.questions-section {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+}
+
+.section-title {
+  text-align: center;
+  color: #0F62FE;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 3rem 0;
+}
+
+.subjects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.subject-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.subject-info-box {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #E5EAF0;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.subject-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+}
+
+.subject-info-box h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+.scores-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-top: 1rem;
+}
+
+.score-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.score-icon-wrapper {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  flex-shrink: 0;
+  margin-top: -4px;
+}
+
+.progress-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.progress-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* In the image, the label is under the bar. Update: Wait, actually the design might put it under or over. We will stack label top, then track. But wait, in the design the dark blue is the fill, and the label is below the bar? Let's check image. */
+.score-label {
+  font-size: 0.75rem;
+  color: #2D9CDB;
+  font-weight: 500;
+}
+
+.score-ratio {
+  font-size: 0.7rem;
+  color: #2D9CDB;
+  font-weight: 600;
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background-color: #E0F2FE;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #1E3A8A; /* Dark blue fill */
+  border-radius: 4px;
+}
+
+/* Footer Copyright */
+.footer-copyright {
+  text-align: center;
+  color: #64748B;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+.text-orange {
+  color: #F2994A;
+  font-weight: 500;
+}
+
+/* Floating Chat Icon (same as Learnpage) */
+.floating-chat {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  background-color: #2D9CDB;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(45, 156, 219, 0.4);
+  transition: transform 0.2s;
+  z-index: 10;
+}
+
+.floating-chat:hover {
+  transform: scale(1.05);
+}

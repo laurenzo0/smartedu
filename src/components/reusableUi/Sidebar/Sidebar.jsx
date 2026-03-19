@@ -1,65 +1,83 @@
-import logo2 from "../../../assets/logo2.png";
 import "./Sidebar.css";
-import { FaThLarge, FaBook, FaFileAlt, FaChartBar, FaUser, FaEllipsisH } from "react-icons/fa";
+import {
+  FaThLarge,
+  FaBook,
+  FaFileAlt,
+  FaChartBar,
+  FaUser,
+  FaEllipsisH,
+} from "react-icons/fa";
 
-function Sidebar(){
-  return(
+function Sidebar({ onNavigate, currentPage }) {
+  return (
     <div className="sidebar">
-
       <div className="logo-section">
-        <img src={logo2} alt="SmartEDu Logo" />
+        <div className="logo-container">
+          <img
+            src="/assets/logo4.png"
+            alt="Logo default"
+            className="logo-img logo-default"
+          />
+          <img
+            src="/assets/logo2.png"
+            alt="Logo hover"
+            className="logo-img logo-hover"
+          />
+        </div>
+        <span className="logo-text"></span>
       </div>
 
-      <div className="menu-item">
-        <div className="slider"></div>
-        <div className="icon-area">
-          <FaThLarge className="icon"/>
+      <nav className="menu-list">
+        <div
+          className={`menu-item ${currentPage === "dashboard" ? "active" : ""}`}
+          onClick={() => onNavigate("dashboard")}
+        >
+          <FaThLarge className="icon" />
           <span className="text">Dashboard</span>
         </div>
-      </div>
 
-      <div className="menu-item">
-        <div className="slider"></div>
-        <div className="icon-area">
-          <FaBook className="icon"/>
+        <div
+          className={`menu-item ${currentPage === "learn" ? "active" : ""}`}
+          onClick={() => onNavigate("learn")}
+        >
+          <FaBook className="icon" />
           <span className="text">Learn</span>
         </div>
-      </div>
 
-      <div className="menu-item">
-        <div className="slider"></div>
-        <div className="icon-area">
-          <FaFileAlt className="icon"/>
+        <div
+          className={`menu-item ${currentPage === "practice" ? "active" : ""}`}
+          onClick={() => onNavigate("practice")}
+        >
+          <FaFileAlt className="icon" />
           <span className="text">Practice</span>
         </div>
-      </div>
 
-      <div className="menu-item">
-        <div className="slider"></div>
-        <div className="icon-area">
-          <FaChartBar className="icon"/>
+        <div
+          className={`menu-item ${currentPage === "report" ? "active" : ""}`}
+          onClick={() => onNavigate("report")}
+        >
+          <FaChartBar className="icon" />
           <span className="text">Report Card</span>
         </div>
-      </div>
 
-      <div className="menu-item">
-        <div className="slider"></div>
-        <div className="icon-area">
-          <FaUser className="icon"/>
+        <div
+          className={`menu-item ${currentPage === "profile" ? "active" : ""}`}
+          onClick={() => onNavigate("profile")}
+        >
+          <FaUser className="icon" />
           <span className="text">Profile</span>
         </div>
-      </div>
 
-      <div className="menu-item">
-        <div className="slider"></div>
-        <div className="icon-area">
-          <FaEllipsisH className="icon"/>
+        <div
+          className={`menu-item ${currentPage === "more" ? "active" : ""}`}
+          onClick={() => onNavigate("more")}
+        >
+          <FaEllipsisH className="icon" />
           <span className="text">More</span>
         </div>
-      </div>
-
+      </nav>
     </div>
-  )
+  );
 }
 
 export default Sidebar;
