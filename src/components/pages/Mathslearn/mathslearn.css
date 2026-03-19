@@ -1,0 +1,114 @@
+:root {
+  /* color variables */
+  --footer-bg: #041830;
+  --darker-blue-color: #020E1D;
+  --dark-blue-color: #0053b8;
+  --background: #FAFBFD;
+  --section-color: #FAFAFA;
+  --pri-green-color: #2a862a;
+  --pri-blue-color:  #055eca;
+  --pri-orange-color: #f57c00;
+  --text-color: #333333;
+  --button-color: #007bff;
+  --link-color: #007bff;;
+  --input-color:  #007bff;
+  /* font variables */
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    background: var(--background);
+}
+
+/* maths-learn-header styling here */
+
+.maths-learn-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: var(--section-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.maths-learn-header-content h2{
+    row-gap: 15px;
+    color: var(--darker-blue-color);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.maths-learn-header-content h2 span{
+    color: var(--pri-green-color);
+}
+
+.maths-learn-header-content p{
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.maths-learn-header-img img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* maths-learn-content styling here */
+
+.maths-learn-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.maths-box{
+    background-color: var(--section-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.maths-box img{
+    max-width: 250px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.maths-box h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 15px;
+}
+
+.maths-list{
+    list-style: none;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.maths-list li{
+    margin: 10px;
+}
+.maths-list li:hover{
+    color: var(--pri-green-color);
+    font-weight: bold;
+}
+
+.maths-box:hover{
+    transform: translateY(-10px);
+}

@@ -1,28 +1,36 @@
 import Navbar from "./components/reusableUi/Navbar/Navbar";
-// import "./App.css";
 import Button from "./components/reusableUi/Button/Button";
 import Login from "./components/pages/Login/Login";
+import EngLearn from "./components/pages/Englishlearn/EngLearn";
+import Learnpage from "./components/pages/Learnpage/Learnpage";
+import DashBoard from "./components/pages/Dashboard/DashBoard";
 
 import LandingPage from "./components/pages/LandingPage/LandingPage";
 import PracticePage from "./components/pages/PracticePage/PracticePage.jsx";
 
-// import NarrowSidebar from "./components/reusableUi/Sidebar/NarrowSidebar"
+import NarrowSidebar from "./components/reusableUi/Sidebar/NarrowSidebar"
 import Sidebar from "./components/reusableUI/Sidebar/Sidebar";
+import MathsLearn from "./components/pages/Mathslearn/MathsLearn";
 
 function App() {
   return (
     <>
       {/* <div className="app-layout">
         <Sidebar />
-        {/* <NarrowSidebar /> */}
+        <NarrowSidebar /> 
 
         {/*<div className="main-section">
             <Navbar />
             <LandingPage />
-            <PracticePage />
-        </div>
+        </div>    
       </div> */}
-      <Login />
+      {/* <Login />  */}
+       {/* <PracticePage /> */}
+       {/* <NarrowSidebar />  */}
+        {/* <LandingPage /> */}
+        {/* <EngLearn /> */}
+        {/* <MathsLearn /> */}
+        <DashBoard />
     </>
   );
 }

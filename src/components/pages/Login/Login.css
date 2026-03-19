@@ -84,9 +84,11 @@ body {
 .welcome-section {
   text-align: center;
   margin-top: -3rem;
+  
 }
 
 .welcome-section h1 {
+  color: #fff;
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -94,6 +96,7 @@ body {
 }
 
 .signup-prompt {
+  color: #fff;
   font-size: 1.15rem;
   font-weight: 500;
 }
