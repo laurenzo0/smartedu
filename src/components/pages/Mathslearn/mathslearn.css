@@ -3,7 +3,7 @@
   --footer-bg: #041830;
   --darker-blue-color: #020E1D;
   --dark-blue-color: #0053b8;
-  --background: #FAFBFD;
+  --background: #eeecec;
   --section-color: #FAFAFA;
   --pri-green-color: #2a862a;
   --pri-blue-color:  #055eca;
@@ -24,21 +24,39 @@
   box-sizing: border-box;
 }
 
-body{
-    background: var(--background);
+.maths-learn-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #eeecec;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+}
+
+.maths-learn-container .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 /* maths-learn-header styling here */
 
 .maths-learn-header{
+    width: 90%;
+    min-height: 250px;
+    padding: 30px;
+    margin: 20px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
     background-color: var(--section-color);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .maths-learn-header-content h2{
@@ -59,7 +77,7 @@ body{
 }
 
 .maths-learn-header-img img{
-    width: 100%;
+    max-width: 200px;
     height: auto;
     border-radius: 10px;
 }
@@ -67,19 +85,26 @@ body{
 /* maths-learn-content styling here */
 
 .maths-learn-content{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
     padding: 20px;
-    margin: 20px;
+    align-items: stretch;
+    margin: 20px auto;
+    gap: 30px;
 }
 
 .maths-box{
+    flex: 1;
+    min-width: 320px;
+    max-width: 400px;
     background-color: var(--section-color);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    padding: 30px;
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .maths-box img{
@@ -109,6 +134,31 @@ body{
     font-weight: bold;
 }
 
-.maths-box:hover{
-    transform: translateY(-10px);
+@media (max-width: 768px) {
+    .maths-learn-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    .maths-learn-header-content h2 {
+        font-size: 8vmin;
+    }
+    .maths-learn-header-content p {
+        font-size: 1rem;
+    }
+    .maths-learn-header-img {
+        max-width: 100%;
+    }
+    .maths-box {
+        min-width: 100%;
+        padding: 20px;
+    }
+    .maths-box img {
+        height: 150px;
+        object-fit: contain;
+    }
+    .maths-learn-content {
+        width: 100%;
+        padding: 10px;
+    }
 }

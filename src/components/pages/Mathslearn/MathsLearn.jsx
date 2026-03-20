@@ -1,16 +1,15 @@
 import Navbar from '../../reusableUi/Navbar/Navbar'
 import './mathslearn.css'
 
-const MathsLearn = () => {
+const MathsLearn = ({ onNavigate }) => {
     return (
-        <>
-        <main className='maths-learn-main'>
+        <div className='maths-learn-container'>
             <Navbar />
 
             {/* maths-learn-header styling here */}
             <div className="maths-learn-header">
                 <div className="maths-learn-header-content">
-                <h2>Hi, {}Aragon <br /> Welcome to <span className='math-span'>Mathematics</span> Class </h2>
+                <h2>Hi, Aragon <br /> Welcome to <span className='math-span'>Mathematics</span> Class </h2>
                 <p>Master the language, unlock the world. Your words have power.</p>
                 </div>
                 <div className="maths-learn-header-img">
@@ -72,11 +71,8 @@ const MathsLearn = () => {
                     </ul>
                 </div>
             </div>
-        </main>
-        
-        
-        </>
+        </div>
     );
 }
 
-export default MathsLearn;
+export default MathsLearn;

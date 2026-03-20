@@ -7,7 +7,6 @@
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   background-color: #fafbfd;
   color: #000000; /* Adjusted to black per local preference */
   overflow: hidden; /* Prevent body scroll, let main-section handle it */

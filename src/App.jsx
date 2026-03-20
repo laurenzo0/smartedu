@@ -12,7 +12,9 @@ import NewPasswordPage from "./components/pages/NewPasswordPage/NewPasswordPage"
 import DashBoard from "./components/pages/Dashboard/DashBoard";
 import EngLearn from "./components/pages/Englishlearn/EngLearn";
 import MathsLearn from "./components/pages/Mathslearn/MathsLearn";
+import LearnScreen from "./components/pages/Learnscreen/LearnScreen";
 import Learnpage from "./components/pages/Learnpage/Learnpage";
+import LandingPage from "./components/pages/LandingPage/LandingPage";
 import PracticePage from "./components/pages/PracticePage/PracticePage";
 import ProfilePage from "./components/pages/ProfilePage/ProfilePage";
 import EnglishTest from "./components/pages/EnglishTest/EnglishTest";
@@ -23,7 +25,7 @@ import CorrectionsPage from "./components/pages/CorrectionsPage/CorrectionsPage"
 import "./App.css";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("login");
+  const [currentPage, setCurrentPage] = useState("landing");
   const [params, setParams] = useState({});
 
   const handleNavigate = (page, pageParams = {}) => {
@@ -50,7 +52,7 @@ function App() {
           <div className="app-layout">
             <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
             <div className="main-section">
-              <Learnpage onNavigate={handleNavigate} />
+              <LearnScreen onNavigate={handleNavigate} />
             </div>
           </div>
         );
@@ -141,6 +143,15 @@ function App() {
             <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
             <div className="main-section">
               <MathsLearn onNavigate={setCurrentPage} />
+            </div>
+          </div>
+        );
+      case "computer-science":
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
+            <div className="main-section">
+              <Learnpage onNavigate={setCurrentPage} />
             </div>
           </div>
         );

@@ -26,12 +26,12 @@ function Sidebar({ onNavigate, currentPage }) {
       <div className="logo-section">
         <div className="logo-container">
           <img
-            src="/assets/logo4.png"
+            src="src/assets/logo1.png"
             alt="Logo default"
             className="logo-img logo-default"
           />
           <img
-            src="/assets/logo2.png"
+            src="src/assets/logo2.png"
             alt="Logo hover"
             className="logo-img logo-hover"
           />

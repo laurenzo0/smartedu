@@ -2,16 +2,15 @@ import React from 'react'
 import Navbar from '../../reusableUi/Navbar/Navbar'
 import './englearn.css'
 
-const EngLearn = () => {
+const EngLearn = ({ onNavigate }) => {
     return (
-        <>
-        <main className='eng-learn-main'>
+        <div className='eng-learn-container'>
             <Navbar />
 
             {/* eng-learn-header styling here */}
             <div className="eng-learn-header">
                 <div className="eng-learn-header-content">
-                <h2>Hi, {}Aragon <br /> Welcome to <span className='eng-span'>English</span> Class </h2>
+                <h2>Hi, Aragon <br /> Welcome to <span className='eng-span'>English</span> Class </h2>
                 <p>Master the language, unlock the world. Your words have power.</p>
                 </div>
                 <div className="eng-learn-header-img">
@@ -74,11 +73,8 @@ const EngLearn = () => {
                     </ul>
                 </div>
             </div>
-        </main>
-        
-        
-        </>
+        </div>
     );
 }
 
-export default EngLearn;
+export default EngLearn;
