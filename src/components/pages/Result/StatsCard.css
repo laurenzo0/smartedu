@@ -1,0 +1,49 @@
+.stats-card{
+  background:white;
+  padding:20px;
+  border: 1px solid;
+  border-color: rgb(185, 183, 183);
+  margin-top:20px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.progress-bar{
+  display:flex;
+  height:10px;
+  margin:15px 0;
+  border-radius:5px;
+  overflow:hidden;
+}
+
+.english{
+  background:#1e73d8;
+}
+
+.maths{
+  background:#ff8c00;
+}
+
+.cs{
+  background:#2e9f45;
+}
+
+.legend p{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:5px 0;
+}
+
+.blue,.orange,.green{
+  width:10px;
+  height:10px;
+}
+
+.blue{background:#1e73d8;}
+.orange{background:#ff8c00;}
+.green{background:#2e9f45;}
+
+.layout {
+    margin-left: 20px;
+    margin-top: 30px;
+}

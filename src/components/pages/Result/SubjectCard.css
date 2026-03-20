@@ -1,0 +1,40 @@
+.subject-card{
+  
+  text-align:center;
+  width:180px;
+  cursor:pointer;
+}
+
+.subject-card img {
+  width: 100%;        /* image fills the card width */
+  max-width: 200px;   /* caps at 200px */
+  height: auto;       /* keeps aspect ratio */
+  display: flex;     /* removes extra bottom space */
+}
+
+.subjects {
+  margin-top: 30px;
+  text-align: center; /* centers heading */
+}
+
+.subjects h4 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.subjects-grid {
+  display: flex;
+  justify-content: center; /* center the cards horizontally */
+  gap: 30px;               /* space between cards */
+  flex-wrap: wrap;          /* wrap on smaller screens */
+  align-items: flex-start;
+}
+
+/* SubjectCard wrapper */
+.subject-card {
+  flex: 0 0 auto;       /* allows natural width based on content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

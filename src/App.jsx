@@ -22,6 +22,7 @@ import MathsTest from "./components/pages/MathsTest/MathsTest";
 import ComputerTest from "./components/pages/ComputerTest/ComputerTest";
 import ResultPage from "./components/pages/ResultPage/ResultPage";
 import CorrectionsPage from "./components/pages/CorrectionsPage/CorrectionsPage";
+import CardReport from "./components/pages/Result/CardReport";
 
 import "./App.css";
 
@@ -109,6 +110,15 @@ function App() {
             </div>
           </div>
         );
+      case "report-result": // Adding new remote route
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
+            <div className="main-section">
+              <CardReport onNavigate={handleNavigate} />
+            </div>
+          </div>
+        );
       case "corrections":
         return (
           <div className="app-layout">
@@ -175,4 +185,3 @@ function App() {
 }
 
 export default App;
-

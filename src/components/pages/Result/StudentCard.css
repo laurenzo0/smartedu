@@ -1,0 +1,36 @@
+.student-card{
+  display:flex;
+  align-items:center;
+  margin-left: 20px;
+  gap:20px;
+  background:white;
+  padding:20px;
+  border: 1px solid;
+  border-color: rgb(185, 183, 183);
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.avatar{
+  width:70px;
+  height:70px;
+  background:#ddd;
+  border-radius:10px;
+}
+
+.student-info h3{
+  margin:0;
+}
+
+.mathguru-img {
+  margin-left: 700px; /* bottom spacing before gauge */
+  align-items: right;    /* ensures text inside is left-aligned */
+}
+
+.result-header {
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.result-header h2{
+  color: gray;
+}

@@ -72,8 +72,8 @@ function Sidebar({ onNavigate, currentPage }) {
         </div>
 
         <div
-          className={`menu-item ${currentPage === "more" ? "active" : ""}`}
-          onClick={() => onNavigate("more")}
+          className={`menu-item ${currentPage === "result" ? "active" : ""}`}
+          onClick={() => onNavigate("result")}
         >
           <FaEllipsisH className="icon" />
           <span className="text">More</span>
