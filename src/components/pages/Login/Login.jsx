@@ -1,90 +1,44 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { FaArrowLeft } from "react-icons/fa";
 
 function Login({ onNavigate }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    setError("");
-    setLoading(true);
-
-    try {
-      // Send a POST request to backend
-      const response = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      let data;
-      try {
-        data = await response.json();
-      } catch {
-        data = { message: "An unexpected error occurred." };
-      }
-
-      if (!response.ok) {
-        throw new Error(data.message || "Invalid email or password");
-      }
-
-      console.log("Login success:", data);
-      alert("Logged in successfully!");
-      onNavigate("learn"); // Navigate to learn page on success
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
+    // For demo/dev purposes, navigating directly
+    // Real implementation would use the fetch logic below
+    onNavigate("learn");
   };
 
   return (
     <div className="login-container">
-      {/* Left Section */}
       <div className="login-left">
         <header className="login-header">
-          <div className="logo-section">
-            <img src="/assets/logo3.png" alt="SmartEdu Logo" />
+          <div className="logo-container">
+            <img src="/assets/logo.png" alt="logo" />
           </div>
-          <button className="back-arrow" onClick={() => onNavigate("learn")}>
-            <FaArrowLeft />
-          </button>
         </header>
 
         <div className="welcome-section">
           <h1>Welcome Back</h1>
-          <p className="login-prompt">
+          <p className="signup-prompt">
             Don't Have an Account Yet?{" "}
-            <a 
-              href="#" 
-              className="signup-link"
-              onClick={(e) => { e.preventDefault(); onNavigate("signup"); }}
-            >
+            <a href="#" className="signup-link" onClick={(e) => { e.preventDefault(); onNavigate("signup"); }}>
               Sign Up
             </a>
           </p>
         </div>
-
-        <footer className="login-footer">
-          © 2026 <span className="footer-brand">SmartEdu</span>. All Rights Reserved
-        </footer>
       </div>
 
-      {/* Right Section */}
-      <div className="login-right">
-        <div className="form-card">
+      <div className="login-right-wrapper">
+        <div className="login-right">
           <h2 className="form-title">Login</h2>
 
-          {error && <div className="error-message">{error}</div>}
 
           <form className="login-form" onSubmit={handleLogin}>
-            <div className="form-row">
+            <div className="form-group row-layout">
               <label htmlFor="email">E-mail:</label>
               <input
                 type="email"
@@ -96,7 +50,7 @@ function Login({ onNavigate }) {
               />
             </div>
 
-            <div className="form-row">
+            <div className="form-group row-layout">
               <label htmlFor="password">Password:</label>
               <input
                 type="password"
@@ -108,20 +62,21 @@ function Login({ onNavigate }) {
               />
             </div>
 
-            <button type="submit" className="login-btn" disabled={loading}>
-              {loading ? "Logging in..." : "Log In"}
+            <button type="submit" className="submit-button">
+              Log In
             </button>
           </form>
 
-          <a 
-            href="#" 
-            className="forgot-password"
-            onClick={(e) => { e.preventDefault(); onNavigate("reset-password"); }}
-          >
+          <a href="#" className="forgot-password">
             Forgotten Password?
           </a>
         </div>
       </div>
+
+      <footer className="login-footer">
+        © 2026 <span className="footer-brand">SmartEdu</span>. All Rights
+        Reserved
+      </footer>
     </div>
   );
 }

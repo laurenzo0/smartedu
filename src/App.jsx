@@ -1,21 +1,19 @@
 import Sidebar from "./components/reusableUi/Sidebar/Sidebar";
-
+import Navbar from "./components/reusableUi/Navbar/Navbar";
 import "./App.css";
 import Button from "./components/reusableUi/Button/Button";
-
-
-import LandingPage from "./components/pages/LandingPage/LandingPage";
-import Learnpage from "./components/pages/Learnpage/Learnpage";
 import Login from "./components/pages/Login/Login";
 import Signup from "./components/pages/Signup/Signup";
 import ResetPassword from "./components/pages/ResetPassword/ResetPassword";
 import ReportCard from "./components/pages/ReportCard/ReportCard";
 import ResetLinkPage from "./components/pages/ResetLinkPage/ResetLinkPage";
 import NewPasswordPage from "./components/pages/NewPasswordPage/NewPasswordPage";
+import Learnpage from "./components/pages/Learnpage/Learnpage";
 import PracticePage from "./components/pages/PracticePage/PracticePage";
 import ProfilePage from "./components/pages/ProfilePage/ProfilePage";
 import EnglishTest from "./components/pages/EnglishTest/EnglishTest";
 import ResultPage from "./components/pages/ResultPage/ResultPage";
+import LandingPage from "./components/pages/LandingPage/LandingPage";
 import React, { useState } from "react";
 
 function App() {
