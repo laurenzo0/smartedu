@@ -16,6 +16,7 @@ import EngLearn from "./components/pages/Englishlearn/EngLearn";
 import MathsLearn from "./components/pages/Mathslearn/MathsLearn";
 import Learnpage from "./components/pages/Learnpage/Learnpage";
 import PracticePage from "./components/pages/PracticePage/PracticePage";
+import CardReport from "./components/pages/Result/CardReport";
 
 import "./App.css";
 
@@ -49,6 +50,15 @@ function App() {
             <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
             <div className="main-section">
               <ReportCard onNavigate={setCurrentPage} />
+            </div>
+          </div>
+        );
+      case "result":
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
+            <div className="main-section">
+              <CardReport onNavigate={setCurrentPage} />
             </div>
           </div>
         );

@@ -1,0 +1,33 @@
+
+.gauge-card {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: left; /* align text to left */
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  align-items: flex-start; /* align children to left */
+}
+
+.gauge {
+  display: flex;
+  justify-content: center; /* keeps half-circle in the center */
+  width: 100%;             /* ensures horizontal centering */
+}
+
+.half-circle{
+  width:120px;
+  height:60px;
+  border:10px solid orange;
+  border-bottom:none;
+  border-radius:120px 120px 0 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.performance {
+  margin: 0 0 20px 0; /* bottom spacing before gauge */
+  text-align: left;    /* ensures text inside is left-aligned */
+}
