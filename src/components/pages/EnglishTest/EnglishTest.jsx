@@ -349,8 +349,13 @@ function EnglishTest({ onNavigate, subject = "Mathematics", topic = "Number & Nu
               <button 
                 className="btn-modal yes" 
                 onClick={() => {
-                  const score = calculateScore();
-                  onNavigate("result", { score, subject, topic });
+                  const calculatedScore = calculateScore();
+                  onNavigate("result", { 
+                    score: calculatedScore, 
+                    subject, 
+                    topic,
+                    selectedAnswers // Passing these for corrections view
+                  });
                 }}
               >
                 Yes

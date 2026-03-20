@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ResultPage.css";
 import Navbar from "../../reusableUi/Navbar/Navbar";
 
-function ResultPage({ score = 80, onNavigate }) {
+function ResultPage({ score = 80, onNavigate, subject, topic, selectedAnswers }) {
   const [offset, setOffset] = useState(628); // 2 * PI * r (r=100) -> approx 628
   
   useEffect(() => {
@@ -56,7 +56,10 @@ function ResultPage({ score = 80, onNavigate }) {
           </div>
 
           <div className="corrections-link-container">
-            <button className="btn-view-corrections" onClick={() => onNavigate("practice")}>
+            <button 
+              className="btn-view-corrections" 
+              onClick={() => onNavigate("corrections", { score, subject, topic, selectedAnswers })}
+            >
               View Corrections
             </button>
           </div>

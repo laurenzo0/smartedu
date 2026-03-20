@@ -110,6 +110,14 @@
   color: #ED810E;
 }
 
+.text-blue {
+  color: #1263E1;
+}
+
+.text-green {
+  color: #10B981;
+}
+
 .hero-text p {
   font-size: 1.1rem;
   color: #64748B;

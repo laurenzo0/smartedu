@@ -14,6 +14,7 @@ import ProfilePage from "./components/pages/ProfilePage/ProfilePage";
 import EnglishTest from "./components/pages/EnglishTest/EnglishTest";
 import ResultPage from "./components/pages/ResultPage/ResultPage";
 import LandingPage from "./components/pages/LandingPage/LandingPage";
+import CorrectionsPage from "./components/pages/CorrectionsPage/CorrectionsPage";
 import React, { useState } from "react";
 
 function App() {
@@ -90,6 +91,15 @@ function App() {
             <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
             <div className="main-section">
               <ResultPage onNavigate={handleNavigate} {...params} />
+            </div>
+          </div>
+        );
+      case "corrections":
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
+            <div className="main-section">
+              <CorrectionsPage onNavigate={handleNavigate} {...params} />
             </div>
           </div>
         );

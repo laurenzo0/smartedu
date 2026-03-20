@@ -75,7 +75,7 @@
 .practice-banner {
   width: 100%;
   border-radius: 20px;
-  overflow: visible; /* to allow the boy to overlap the container if needed */
+  overflow: visible; 
   display: flex;
   justify-content: space-between;
   align-items: center;
