@@ -15,11 +15,9 @@ import {
 
 function EnglishTest({ onNavigate, subject = "Mathematics", topic = "Number & Numeration" }) {
   const [currentQuestion, setCurrentQuestion] = useState(1);
-  const totalQuestions = subject.toLowerCase().includes("english") ? 60 : 30;
+  const totalQuestions = 60;
   
-  const [timeLeft, setTimeLeft] = useState(() => {
-    return subject.toLowerCase().includes("english") ? 120 * 60 : 15 * 60;
-  });
+  const [timeLeft, setTimeLeft] = useState(120 * 60);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [essayAnswer, setEssayAnswer] = useState("");
   const [showExitModal, setShowExitModal] = useState(false);
@@ -37,14 +35,7 @@ function EnglishTest({ onNavigate, subject = "Mathematics", topic = "Number & Nu
     return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
   };
 
-  const getSubjectColorClass = () => {
-    const sub = subject.toLowerCase();
-    if (sub.includes("math")) return "theme-orange";
-    if (sub.includes("computer")) return "theme-green";
-    return "theme-blue"; // Default for English
-  };
-
-  const themeClass = getSubjectColorClass();
+  const themeClass = "theme-blue"; // Default for English
 
   // Expanded Mock Data
   const englishQuestions = [
@@ -72,48 +63,10 @@ function EnglishTest({ onNavigate, subject = "Mathematics", topic = "Number & Nu
     }
   ];
 
-  const mathQuestions = [
-    { type: "mcq", text: "What is the decimal value (base-10) of the number 1011₂ (base-2)?", options: ["A. 9", "B. 11", "C. 13", "D. 15"], correctAnswer: 1 },
-    { type: "mcq", text: "Solve for x: 2x + 5 = 15", options: ["A. 5", "B. 10", "C. 15", "D. 20"], correctAnswer: 0 },
-    { type: "mcq", text: "What is the square root of 144?", options: ["A. 10", "B. 12", "C. 14", "D. 16"], correctAnswer: 1 },
-    { type: "mcq", text: "Find the area of a circle with radius 7cm (take π=22/7):", options: ["A. 154 cm²", "B. 44 cm²", "C. 144 cm²", "D. 22 cm²"], correctAnswer: 0 },
-    { type: "mcq", text: "Simplify: 3(x + 2) - 2x", options: ["A. x + 6", "B. 5x + 6", "C. x - 6", "D. 5x - 6"], correctAnswer: 0 },
-    { type: "mcq", text: "What is 15% of 200?", options: ["A. 15", "B. 20", "C. 30", "D. 45"], correctAnswer: 2 },
-    { type: "mcq", text: "Solve: 8 ÷ 2(2 + 2) = ?", options: ["A. 1", "B. 16", "C. 8", "D. 4"], correctAnswer: 1 },
-    { type: "mcq", text: "If a triangle has angles 90° and 45°, what is the third angle?", options: ["A. 30°", "B. 45°", "C. 60°", "D. 90°"], correctAnswer: 1 },
-    { type: "mcq", text: "Convert 0.75 to a fraction:", options: ["A. 1/2", "B. 3/4", "C. 2/3", "D. 4/5"], correctAnswer: 1 },
-    { type: "mcq", text: "If 5 pencils cost $10, how much do 12 pencils cost?", options: ["A. $24", "B. $20", "C. $12", "D. $25"], correctAnswer: 0 },
-    { type: "mcq", text: "Which number is a prime number?", options: ["A. 9", "B. 15", "C. 21", "D. 29"], correctAnswer: 3 },
-    { type: "mcq", text: "What is the value of 5³?", options: ["A. 15", "B. 25", "C. 125", "D. 625"], correctAnswer: 2 },
-    { type: "mcq", text: "What is the perimeter of a rectangle with length 8 and width 5?", options: ["A. 13", "B. 26", "C. 40", "D. 18"], correctAnswer: 1 },
-    { type: "mcq", text: "Calculate the median of 2, 5, 8, 11, 14:", options: ["A. 5", "B. 8", "C. 11", "D. 6"], correctAnswer: 1 },
-    { type: "mcq", text: "Expand: (x + 2)(x + 3)", options: ["A. x² + 6", "B. x² + 5x + 6", "C. 2x + 5", "D. x² + x + 6"], correctAnswer: 1 }
-  ];
 
-  const computerQuestions = [
-    { type: "mcq", text: "What does CPU stand for?", options: ["A. Central Processing Unit", "B. Computer Personal Unit", "C. Central Processor Unit", "D. Control Processing Unit"], correctAnswer: 0 },
-    { type: "mcq", text: "Which of the following is an input device?", options: ["A. Monitor", "B. Printer", "C. Keyboard", "D. Speaker"], correctAnswer: 2 },
-    { type: "mcq", text: "What does RAM stand for?", options: ["A. Random Access Memory", "B. Read Only Memory", "C. Random Active Memory", "D. Read Access Memory"], correctAnswer: 0 },
-    { type: "mcq", text: "Which of the following is an operating system?", options: ["A. Microsoft Word", "B. Linux", "C. Google Chrome", "D. Python"], correctAnswer: 1 },
-    { type: "mcq", text: "In computing, what is a bit?", options: ["A. A single binary digit (0 or 1)", "B. 8 bytes", "C. A small piece of data", "D. A network protocol"], correctAnswer: 0 },
-    { type: "mcq", text: "What does HTTP stand for?", options: ["A. HyperText Transfer Protocol", "B. HyperLink Transfer Protocol", "C. HyperText Transmission Protocol", "D. Hyper Terminal Transfer Protocol"], correctAnswer: 0 },
-    { type: "mcq", text: "Which language is primarily used for web styling?", options: ["A. HTML", "B. Python", "C. CSS", "D. C++"], correctAnswer: 2 },
-    { type: "mcq", text: "What is a motherboard?", options: ["A. A software program", "B. The main circuit board", "C. An input device", "D. A power supply"], correctAnswer: 1 },
-    { type: "mcq", text: "What does GUI stand for?", options: ["A. Graphical User Interface", "B. General Utility Interface", "C. Graphic Unit Integration", "D. General User Interface"], correctAnswer: 0 },
-    { type: "mcq", text: "What is phishing?", options: ["A. A new programming language", "B. A cyber-attack to steal data", "C. A hardware device", "D. A network error"], correctAnswer: 1 },
-    { type: "mcq", text: "Which component is known as the brain of the computer?", options: ["A. RAM", "B. Hard Drive", "C. CPU", "D. Monitor"], correctAnswer: 2 },
-    { type: "mcq", text: "What is cloud computing?", options: ["A. Weather predicting servers", "B. Storing data over the internet", "C. Local hardware storage", "D. Wireless keyboards"], correctAnswer: 1 },
-    { type: "mcq", text: "Which is a volatile memory?", options: ["A. ROM", "B. Hard Disk", "C. SSD", "D. RAM"], correctAnswer: 3 },
-    { type: "mcq", text: "What does IP stand for in 'IP Address'?", options: ["A. Internet Provider", "B. Internal Process", "C. Internet Protocol", "D. International Protocol"], correctAnswer: 2 },
-    { type: "mcq", text: "What is an algorithm?", options: ["A. A computer component", "B. A step-by-step procedure to solve a problem", "C. A type of virus", "D. A database"], correctAnswer: 1 }
-  ];
 
   const getMockQuestionData = (qNum) => {
-    const isEnglish = subject.toLowerCase().includes("english");
-    const isMath = subject.toLowerCase().includes("math");
-    const isComputer = subject.toLowerCase().includes("computer");
-
-    if (isEnglish && qNum > 50) {
+    if (qNum > 50) {
       return {
         type: "essay",
         text: "Answer any of the following essay topics in not more than 500 words:",
@@ -127,11 +80,7 @@ function EnglishTest({ onNavigate, subject = "Mathematics", topic = "Number & Nu
       };
     }
 
-    let arr = englishQuestions;
-    if (isMath) arr = mathQuestions;
-    if (isComputer) arr = computerQuestions;
-
-    return arr[(qNum - 1) % arr.length];
+    return englishQuestions[(qNum - 1) % englishQuestions.length];
   };
 
   const currentData = getMockQuestionData(currentQuestion);
@@ -153,19 +102,11 @@ function EnglishTest({ onNavigate, subject = "Mathematics", topic = "Number & Nu
 
   const testHistory = [
     { title: "Lexis & Structure Test 1 (70%)- Completed", icon: <FaGraduationCap />, color: "#00A3FF" },
-    { title: "Software & Systems Test 3 (55%)- Completed", icon: <FaDesktop />, color: "#28a745" },
   ];
-
-  const getTopicSubtitle = () => {
-    if (subject.toLowerCase().includes("math")) return "How well do you know how to work with numbers?";
-    if (subject.toLowerCase().includes("computer")) return "If you want to be a tech bro/sis, here's your head start.";
-    return "How well can you use the right words and tenses?";
-  };
 
   const calculateScore = () => {
     let earnedPoints = 0;
-    const isEnglish = subject.toLowerCase().includes("english");
-    const mcqCount = isEnglish ? 50 : totalQuestions;
+    const mcqCount = 50;
 
     for (let i = 1; i <= mcqCount; i++) {
       const qData = getMockQuestionData(i);
@@ -176,13 +117,11 @@ function EnglishTest({ onNavigate, subject = "Mathematics", topic = "Number & Nu
 
     let finalScore = (earnedPoints / totalQuestions) * 100;
     
-    // Add points for essay if it's English (up to 16% ~10 pts)
-    if (isEnglish) {
-       let essayScore = 0;
-       if (essayAnswer.length > 50) essayScore = 16.6; 
-       else if (essayAnswer.length > 10) essayScore = 8;
-       finalScore += essayScore;
-    }
+    // Add points for essay
+    let essayScore = 0;
+    if (essayAnswer.length > 50) essayScore = 16.6; 
+    else if (essayAnswer.length > 10) essayScore = 8;
+    finalScore += essayScore;
 
     if (finalScore > 100) finalScore = 100;
     return Math.round(finalScore);
@@ -216,12 +155,10 @@ function EnglishTest({ onNavigate, subject = "Mathematics", topic = "Number & Nu
           <div className="test-top-header">
             <div className="test-header-text">
               <h1>
-                <span className="subject-name">{subject}</span> {subject.toLowerCase() === "english" ? "EXAMINATION" : "Test"} - <span className="topic-name">{topic}</span>
+                <span className="subject-name">{subject}</span> EXAMINATION - <span className="topic-name">{topic}</span>
               </h1>
-              <p>{getTopicSubtitle()}</p>
-              {subject.toLowerCase() === "english" && (
-                <p className="essay-notice">N.B. - Questions 51-60 are <strong>essay questions</strong> in which answers would be typed.</p>
-              )}
+              <p>How well can you use the right words and tenses?</p>
+              <p className="essay-notice">N.B. - Questions 51-60 are <strong>essay questions</strong> in which answers would be typed.</p>
             </div>
             <div className="test-header-image">
               <img src="/src/assets/images/student-kid.avif" alt="Illustration" />

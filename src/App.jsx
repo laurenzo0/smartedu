@@ -18,8 +18,9 @@ import LandingPage from "./components/pages/LandingPage/LandingPage";
 import PracticePage from "./components/pages/PracticePage/PracticePage";
 import ProfilePage from "./components/pages/ProfilePage/ProfilePage";
 import EnglishTest from "./components/pages/EnglishTest/EnglishTest";
+import MathsTest from "./components/pages/MathsTest/MathsTest";
+import ComputerTest from "./components/pages/ComputerTest/ComputerTest";
 import ResultPage from "./components/pages/ResultPage/ResultPage";
-import LandingPage from "./components/pages/LandingPage/LandingPage";
 import CorrectionsPage from "./components/pages/CorrectionsPage/CorrectionsPage";
 
 import "./App.css";
@@ -83,15 +84,22 @@ function App() {
             </div>
           </div>
         );
-      case "test":
+      case "test": {
+        let TestComponent = EnglishTest;
+        if (params.subject?.toLowerCase().includes("math")) {
+          TestComponent = MathsTest;
+        } else if (params.subject?.toLowerCase().includes("computer")) {
+          TestComponent = ComputerTest;
+        }
         return (
           <div className="app-layout">
             <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
             <div className="main-section">
-              <EnglishTest onNavigate={handleNavigate} {...params} />
+              <TestComponent onNavigate={handleNavigate} {...params} />
             </div>
           </div>
         );
+      }
       case "result":
         return (
           <div className="app-layout">
@@ -119,39 +127,31 @@ function App() {
             </div>
           </div>
         );
-      case "practice":
-        return (
-          <div className="app-layout">
-            <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
-            <div className="main-section">
-              <PracticePage onNavigate={setCurrentPage} />
-            </div>
-          </div>
-        );
+
       case "english":
         return (
           <div className="app-layout">
-            <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
             <div className="main-section">
-              <EngLearn onNavigate={setCurrentPage} />
+              <EngLearn onNavigate={handleNavigate} />
             </div>
           </div>
         );
       case "maths":
         return (
           <div className="app-layout">
-            <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
             <div className="main-section">
-              <MathsLearn onNavigate={setCurrentPage} />
+              <MathsLearn onNavigate={handleNavigate} />
             </div>
           </div>
         );
       case "computer-science":
         return (
           <div className="app-layout">
-            <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
             <div className="main-section">
-              <Learnpage onNavigate={setCurrentPage} />
+              <Learnpage onNavigate={handleNavigate} />
             </div>
           </div>
         );

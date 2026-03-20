@@ -7,19 +7,10 @@ import {
   FaChartBar,
   FaUser,
   FaEllipsisH,
-  FaChevronDown,
-  FaChevronRight,
-  FaDesktop,
-  FaPlus,
-  FaLanguage,
 } from "react-icons/fa";
 
 function Sidebar({ onNavigate, currentPage }) {
-  const [isLearnOpen, setIsLearnOpen] = useState(false);
 
-  const toggleLearn = () => {
-    setIsLearnOpen(!isLearnOpen);
-  };
 
   return (
     <div className="sidebar">
@@ -48,43 +39,12 @@ function Sidebar({ onNavigate, currentPage }) {
           <span className="text">Dashboard</span>
         </div>
 
-        <div className="menu-group">
-          <div
-            className={`menu-item ${currentPage === "learn" ? "active" : ""}`}
-            onClick={toggleLearn}
-          >
-            <FaBook className="icon" />
-            <span className="text">Learn</span>
-            <span className="toggle-icon">
-              {isLearnOpen ? <FaChevronDown /> : <FaChevronRight />}
-            </span>
-          </div>
-
-          {isLearnOpen && (
-            <div className="sub-menu">
-              <div 
-                className="sub-item" 
-                onClick={() => onNavigate("learn", { subject: "Computer Science" })}
-              >
-                <FaDesktop className="sub-icon" />
-                <span className="sub-text">Computer Science</span>
-              </div>
-              <div 
-                className="sub-item" 
-                onClick={() => onNavigate("learn", { subject: "Mathematics" })}
-              >
-                <FaPlus className="sub-icon" />
-                <span className="sub-text">Mathematics</span>
-              </div>
-              <div 
-                className="sub-item" 
-                onClick={() => onNavigate("learn", { subject: "English" })}
-              >
-                <FaLanguage className="sub-icon" />
-                <span className="sub-text">English</span>
-              </div>
-            </div>
-          )}
+        <div
+          className={`menu-item ${currentPage === "learn" ? "active" : ""}`}
+          onClick={() => onNavigate("learn")}
+        >
+          <FaBook className="icon" />
+          <span className="text">Learn</span>
         </div>
 
         <div

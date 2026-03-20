@@ -18,17 +18,17 @@ function PracticePage({ onNavigate }) {
                 <div className="box eng-lang">
                     <img src="src/assets/images/book stack.jpeg" alt="book stack" className="eng-img" />
                     <h2>English Language</h2>
-                    <button className="eng-btn" onClick={() => onNavigate("english")}>Take a full test <i className="fa-solid fa-pen"></i></button>
+                    <button className="eng-btn" onClick={() => onNavigate("test", { subject: "English Language" })}>Take a full test <i className="fa-solid fa-pen"></i></button>
                 </div>
                 <div className="box maths">
                     <img src="src/assets/images/confused student.jpeg" alt="confused student" className="math-img" />
                     <h2>Mathematics</h2>
-                    <button className="math-btn" onClick={() => onNavigate("maths")}>Take a full test <i className="fa-solid fa-pen"></i></button>
+                    <button className="math-btn" onClick={() => onNavigate("test", { subject: "Mathematics" })}>Take a full test <i className="fa-solid fa-pen"></i></button>
                 </div>
                 <div className="box comp-sci">
                     <img src="src/assets/images/purple big guy.jpeg" alt="purple big guy" className="comp-img" />
                     <h2>Computer Science</h2>
-                    <button className="comp-btn" onClick={() => onNavigate("learn")}>Take a full test <i className="fa-solid fa-pen"></i></button>
+                    <button className="comp-btn" onClick={() => onNavigate("test", { subject: "Computer Science" })}>Take a full test <i className="fa-solid fa-pen"></i></button>
                 </div>
             </div>
             

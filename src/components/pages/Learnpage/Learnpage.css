@@ -1,12 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
 .learn-container {
-  padding: 2.5rem 3.5rem;
-  background-color: #F1F4F9; /* Light gray/blue background from screenshot */
+  padding: 2rem;
+  background-color: #F1F4F9;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
   font-family: 'Outfit', sans-serif;
-  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Top Bar */
@@ -14,7 +19,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .search-container {
@@ -74,7 +80,7 @@
 .learn-hero {
   background: white;
   border-radius: 32px;
-  padding: 3rem 5rem;
+  padding: 2rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,6 +88,8 @@
   border: 1px solid #E5EAF0;
   position: relative;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hero-text {
@@ -137,7 +145,7 @@
 /* Topics Grid */
 .topics-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2.5rem;
   padding-bottom: 5rem;
 }

@@ -6,7 +6,7 @@ function ProfilePage({ onNavigate }) {
   const [isEditing, setIsEditing] = React.useState(false);
   
   const profileData = {
-    name: isEditing ? "Argon Arathon" : "Argon Arathon",
+    name: "Argon Arathon",
     email: "aragonarathon@smartedu.com",
     role: "Student",
     location: "Techyjaunt quarters, Ikeja, Lagos",
