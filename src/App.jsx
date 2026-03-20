@@ -12,43 +12,84 @@ import ResetPassword from "./components/pages/ResetPassword/ResetPassword";
 import ReportCard from "./components/pages/ReportCard/ReportCard";
 import ResetLinkPage from "./components/pages/ResetLinkPage/ResetLinkPage";
 import NewPasswordPage from "./components/pages/NewPasswordPage/NewPasswordPage";
+import PracticePage from "./components/pages/PracticePage/PracticePage";
+import ProfilePage from "./components/pages/ProfilePage/ProfilePage";
+import EnglishTest from "./components/pages/EnglishTest/EnglishTest";
+import ResultPage from "./components/pages/ResultPage/ResultPage";
 import React, { useState } from "react";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("login");
+  const [params, setParams] = useState({});
+
+  const handleNavigate = (page, pageParams = {}) => {
+    setCurrentPage(page);
+    setParams(pageParams);
+  };
 
   const renderPage = () => {
     switch (currentPage) {
       case "login":
-        return <Login onNavigate={setCurrentPage} />;
+        return <Login onNavigate={handleNavigate} />;
       case "signup":
-        return <Signup onNavigate={setCurrentPage} />;
+        return <Signup onNavigate={handleNavigate} />;
       case "reset-password":
-        return <ResetPassword onNavigate={setCurrentPage} />;
+        return <ResetPassword onNavigate={handleNavigate} />;
       case "reset-link":
-        return <ResetLinkPage onNavigate={setCurrentPage} />;
+        return <ResetLinkPage onNavigate={handleNavigate} />;
       case "new-password":
-        return <NewPasswordPage onNavigate={setCurrentPage} />;
+        return <NewPasswordPage onNavigate={handleNavigate} />;
       case "learn":
         return (
           <div className="app-layout">
-            <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
             <div className="main-section">
-              <Learnpage onNavigate={setCurrentPage} />
+              <Learnpage onNavigate={handleNavigate} />
+            </div>
+          </div>
+        );
+      case "practice":
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
+            <div className="main-section">
+              <PracticePage onNavigate={handleNavigate} />
             </div>
           </div>
         );
       case "report":
         return (
           <div className="app-layout">
-            <Sidebar onNavigate={setCurrentPage} currentPage={currentPage} />
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
             <div className="main-section">
-              <ReportCard onNavigate={setCurrentPage} />
+              <ReportCard onNavigate={handleNavigate} />
+            </div>
+          </div>
+        );
+      case "profile":
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
+            <div className="main-section">
+              <ProfilePage onNavigate={handleNavigate} />
+            </div>
+          </div>
+        );
+      case "test":
+        return <EnglishTest onNavigate={handleNavigate} {...params} />;
+      case "result":
+        return <ResultPage onNavigate={handleNavigate} {...params} />;
+      case "dashboard":
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
+            <div className="main-section">
+              <LandingPage onNavigate={handleNavigate} />
             </div>
           </div>
         );
       default:
-        return <Signup onNavigate={setCurrentPage} />;
+        return <Signup onNavigate={handleNavigate} />;
     }
   };
 

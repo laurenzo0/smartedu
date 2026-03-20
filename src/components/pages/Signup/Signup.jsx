@@ -20,7 +20,8 @@ function Signup({ onNavigate }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Signup data:", formData);
-    // Logic for registration
+    // Logic for registration - navigating to learn for demo
+    onNavigate("learn");
   };
 
   return (

@@ -8,7 +8,7 @@ import {
   FaCommentDots,
 } from "react-icons/fa";
 
-function Learnpage() {
+function Learnpage({ onNavigate }) {
   const topics = [
     {
       id: 1,
@@ -65,10 +65,10 @@ function Learnpage() {
           <input type="text" placeholder="Search" />
         </div>
         <div className="action-icons">
-          <div className="icon-box">
+          <div className="icon-box" onClick={() => onNavigate("practice")}>
             <FaBell />
           </div>
-          <div className="icon-box">
+          <div className="icon-box" onClick={() => onNavigate("profile")}>
             <FaUser />
           </div>
           <div className="icon-box">

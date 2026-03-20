@@ -232,20 +232,65 @@
   .login-container {
     flex-direction: column;
     overflow-y: auto;
+    height: 100vh;
+    height: 100dvh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
   .login-left {
-
-    padding: 2rem;
+    padding: 4rem 2rem;
     min-height: auto;
+    flex: none;
   }
   .login-left h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
   .login-right {
-    padding: 1rem;
+    padding: 2rem 1rem;
+    flex: none;
   }
   .form-card {
     padding: 2rem;
-    border-radius: 20px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-left h1 {
+    font-size: 2.22rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  
+  .form-row label {
+    width: auto;
+  }
+  
+  .logo-section {
+    left: 1rem;
+  }
+  
+  .logo-section img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-left {
+    padding: 3rem 1rem;
+  }
+  
+  .login-left h1 {
+    font-size: 1.8rem;
+  }
+  
+  .form-card {
+    padding: 1.5rem 1rem;
   }
 }

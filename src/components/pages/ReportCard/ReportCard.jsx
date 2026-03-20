@@ -11,7 +11,7 @@ import {
   FaDesktop
 } from "react-icons/fa";
 
-function ReportCard() {
+function ReportCard({ onNavigate }) {
   const subjects = [
     {
       id: "math",
@@ -67,10 +67,10 @@ function ReportCard() {
           <input type="text" placeholder="Search" />
         </div>
         <div className="action-icons">
-          <div className="icon-box">
+          <div className="icon-box" onClick={() => onNavigate("practice")}>
             <FaBell />
           </div>
-          <div className="icon-box">
+          <div className="icon-box" onClick={() => onNavigate("profile")}>
             <FaUser />
           </div>
           <div className="icon-box">

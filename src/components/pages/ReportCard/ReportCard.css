@@ -293,3 +293,74 @@
 .floating-chat:hover {
   transform: scale(1.05);
 }
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .report-top-bar {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .search-container {
+    width: 100%;
+  }
+
+  .report-content {
+    padding: 1.5rem;
+    padding-bottom: 100px;
+  }
+
+  .user-profile-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .subject-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .subject-info-box {
+    width: 100%;
+    flex-shrink: initial;
+  }
+
+  .scores-list {
+    width: 100%;
+  }
+
+  .questions-section {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .report-content {
+    padding: 1rem;
+    padding-bottom: 90px;
+  }
+  
+  .avatar-placeholder {
+    width: 60px;
+    height: 60px;
+  }
+
+  .user-details h2 {
+    font-size: 1.1rem;
+  }
+  
+  .score-item {
+    gap: 0.5rem;
+  }
+  
+  .score-icon-wrapper {
+    width: 28px;
+    height: 28px;
+  }
+}

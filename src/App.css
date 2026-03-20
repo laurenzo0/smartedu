@@ -16,3 +16,15 @@ body {
   overflow-y: auto;
   background-color: #F1F4F9;
 }
+
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column-reverse;
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  }
+  
+  .main-section {
+    height: calc(100% - 70px); /* Space for bottom nav */
+  }
+}

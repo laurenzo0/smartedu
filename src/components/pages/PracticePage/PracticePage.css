@@ -1,0 +1,352 @@
+.practice-container {
+  padding: 2.5rem 2rem;
+  background-color: #F8FAFC;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Top Bar */
+.practice-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.search-container {
+  flex: 1;
+  max-width: 800px;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  border: 1px solid #E5EAF0;
+}
+
+.search-icon {
+  color: #8E95A2;
+  margin-right: 1rem;
+  font-size: 1.1rem;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+  color: #16264A;
+  background: transparent;
+}
+
+.action-icons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.icon-box {
+  background: white;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: #16264A;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  border: 1px solid #E5EAF0;
+}
+
+/* Hero Banner */
+.practice-hero-banner {
+  background: url('/assets/blue.png') no-repeat center right;
+  background-size: cover;
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  
+}
+
+.hero-banner-content {
+  gap: 3rem;
+  z-index: 2;
+}
+
+.hero-banner-text h1 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 800;
+}
+
+.hero-banner-text p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.hero-stat-box {
+  background: white;
+  color: #0077FF;
+  padding: 1.5rem 2.5rem;
+  border-radius: 20px;
+  font-size: 2.8rem;
+  font-weight: 800;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+
+/* Section Label */
+.section-title-label {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.section-title-label p {
+  color: #16264A;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Full Test Cards */
+.full-test-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.full-test-card {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1.5px solid #E5EAF0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.full-test-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+.full-test-img img {
+  height: 140px;
+  object-fit: contain;
+}
+
+.full-test-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.title-blue { color: #00A3FF; }
+.title-orange { color: #ED810E; }
+.title-green { color: #2D6A4F; }
+
+.btn-full-test {
+  padding: 0.9rem 2.5rem;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.2s;
+}
+
+.bg-blue { background: #00A3FF; }
+.bg-orange { background: #ED810E; }
+.bg-green { background: #2D6A4F; }
+
+.btn-full-test:hover { opacity: 0.9; }
+
+/* Detailed Section Cards */
+.detailed-sections-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.detailed-section-title {
+  text-align: center;
+  color: #16264A;
+  font-size: 1.3rem;  
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.detailed-section-wrapper{
+  background: white;
+  border-radius: 24px;
+  border: 1.5px solid #E5EAF0;
+}
+
+.detailed-section-card {
+  
+  padding: 3rem 4rem;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  
+}
+
+.detailed-section-left img {
+  width: 200px;
+  object-fit: contain;
+}
+
+.detailed-section-right {
+  flex: 1;
+}
+
+.topics-listing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 3rem;
+}
+
+.detailed-topic-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #64748B;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.detailed-topic-item:hover {
+  color: #0077FF;
+}
+
+.bullet {
+  color: #D1D5DB;
+  font-size: 1.5rem;
+}
+
+/* Footer */
+.practice-dashboard-footer {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-top: 1px solid #E5EAF0;
+  text-align: center;
+}
+
+.footer-content {
+  color: #64748B;
+  font-size: 1rem;
+}
+
+.footer-content .highlight {
+  color: #ED810E;
+  font-weight: 600;
+}
+
+/* Floating Icon */
+.floating-chat-icon {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  width: 65px;
+  height: 65px;
+  background: #00A3FF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  box-shadow: 0 10px 30px rgba(0, 163, 255, 0.4);
+  cursor: pointer;
+  z-index: 1000;
+}
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .full-test-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .detailed-section-card {
+    flex-direction: column;
+    padding: 2.5rem;
+    gap: 2rem;
+  }
+  .detailed-section-left img {
+    width: 150px;
+  }
+  .practice-hero-banner {
+    background-size: cover;
+  } 
+}
+
+@media (max-width: 768px) {
+  .practice-container {
+    padding: 1.5rem;
+    padding-bottom: 100px;
+  }
+
+  .practice-top-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .practice-hero-banner {
+    background-size: cover;
+    padding: 3rem 2rem;
+    min-height: 300px;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-banner-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .full-test-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .topics-listing-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .detailed-section-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .practice-container {
+    padding: 1rem;
+    padding-bottom: 90px;
+  }
+
+  .hero-banner-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-banner-text p {
+    font-size: 0.95rem;
+  }
+  
+  .full-test-card {
+    padding: 2rem 1rem;
+  }
+}
