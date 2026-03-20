@@ -253,7 +253,7 @@ body {
 }
 
 /* footer styling here */
-.landing-page-ftr{
+.landing-footer {
     width: 100%;
     min-height: 300px;
     background-color: var(--footer-bg);
@@ -261,7 +261,7 @@ body {
     color: #fff;
 }
 
-.landing-page-ftr h3{
+.landing-footer h3{
     color: #fff;
     font-size: 30px;
     font-weight: bold;

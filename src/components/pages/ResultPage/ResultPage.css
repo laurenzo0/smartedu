@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.result-exam-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f7f9fc;
+  font-family: 'Inter', sans-serif;
+  color: #1a2a47;
+}
+
+.result-exam-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 2rem;
+}
+
+.result-celebration-card {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 1px solid #e2e8f0;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Typography for Names */
+.congrats-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #ED810E;
+  margin: 0;
+  z-index: 2;
+}
+
+.congrats-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
+  color: #1a2a47;
+  margin: 0.5rem 0 2rem 0;
+  z-index: 2;
+}
+
+/* Circular Chart Animation */
+.circle-loader-container {
+  position: relative;
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.circular-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #e2e8f0;
+  stroke-width: 14;
+}
+
+.circle-fill {
+  fill: none;
+  stroke: #2D6A4F;
+  stroke-width: 14;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 2s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1a2a47;
+}
+
+/* Rank Badge section */
+.rank-unlock-section {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  background: #f8fafc;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  border: 1px solid #e2e8f0;
+  z-index: 2;
+}
+
+.rank-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a2a47;
+}
+
+.rank-badge-icon {
+  font-size: 1.5rem;
+}
+
+/* Corrections Button */
+.corrections-link-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  z-index: 2;
+}
+
+.btn-view-corrections {
+  background: none;
+  border: none;
+  color: #64748B;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-view-corrections:hover {
+  color: #1a2a47;
+}
+
+/* Designer Note */
+.designer-note {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-align: center;
+  border-top: 1px dashed #cbd5e1;
+  padding-top: 1rem;
+  width: 100%;
+}
+
+/* Confetti Decoration */
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.confetti-particle {
+  position: absolute;
+  width: 8px;
+  height: 16px;
+  background-color: #ED810E;
+  opacity: 0;
+  animation: confetti-fall 3s ease-out forwards;
+}
+
+.confetti-particle:nth-child(even) {
+  background-color: #2D6A4F;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.confetti-particle:nth-child(3n) {
+  background-color: #00A3FF;
+}
+
+/* Randomizing initial positions using an inline nth-child block */
+.confetti-particle.p0 { top: -10%; left: 10%; animation-delay: 0.1s; }
+.confetti-particle.p1 { top: -10%; left: 20%; animation-delay: 0.3s; }
+.confetti-particle.p2 { top: -10%; left: 30%; animation-delay: 0.2s; }
+.confetti-particle.p3 { top: -10%; left: 40%; animation-delay: 0.4s; }
+.confetti-particle.p4 { top: -10%; left: 50%; animation-delay: 0.1s; }
+.confetti-particle.p5 { top: -10%; left: 60%; animation-delay: 0.5s; }
+.confetti-particle.p6 { top: -10%; left: 70%; animation-delay: 0.2s; }
+.confetti-particle.p7 { top: -10%; left: 80%; animation-delay: 0.6s; }
+.confetti-particle.p8 { top: -10%; left: 90%; animation-delay: 0.3s; }
+.confetti-particle.p9 { top: -10%; left: 15%; animation-delay: 0.7s; }
+.confetti-particle.p10 { top: -10%; left: 25%; animation-delay: 0.4s; }
+.confetti-particle.p11 { top: -10%; left: 35%; animation-delay: 0.8s; }
+.confetti-particle.p12 { top: -10%; left: 45%; animation-delay: 0.1s; }
+.confetti-particle.p13 { top: -10%; left: 55%; animation-delay: 0.5s; }
+.confetti-particle.p14 { top: -10%; left: 65%; animation-delay: 0.9s; }
+.confetti-particle.p15 { top: -10%; left: 75%; animation-delay: 0.2s; }
+.confetti-particle.p16 { top: -10%; left: 85%; animation-delay: 0.6s; }
+.confetti-particle.p17 { top: -10%; left: 95%; animation-delay: 0.3s; }
+.confetti-particle.p18 { top: -10%; left: 5%; animation-delay: 0.7s; }
+.confetti-particle.p19 { top: -10%; left: 50%; animation-delay: 0.4s; }
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(500px) rotate(360deg);
+    opacity: 0;
+  }
+}

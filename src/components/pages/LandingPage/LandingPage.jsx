@@ -82,7 +82,7 @@ function LandingPage() {
         </div>
 
         {/* footer section here */}
-        <footer className="landing-page-ftr">
+        <footer className="landing-footer">
             <h3>Get in Touch</h3>
             <div className="footer-content">
                 <div className="one">
