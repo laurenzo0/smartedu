@@ -1,128 +1,189 @@
 import React from "react";
 import "./PracticePage.css";
-import Navbar from "../../reusableUi/Navbar/Navbar";
-import { FaExternalLinkAlt, FaCommentDots } from "react-icons/fa";
+import {
+  FaSearch,
+  FaBell,
+  FaUser,
+  FaCog,
+} from "react-icons/fa";
+import { HiOutlinePencilAlt } from "react-icons/hi"; // Pencil icon for button
+
+// Import images from src/assets to ensure they bundle
+import englishFull from "../../../assets/images/group english.jpeg";
+import mathFull from "../../../assets/images/desk study.jpeg";
+import computerFull from "../../../assets/images/computer motherboard.jpeg";
+
+import englishSection from "../../../assets/images/class study.jpeg";
+import mathSection from "../../../assets/images/numbers.jpeg";
+import computerSection from "../../../assets/images/ict circuit.jpeg";
+
+import chatIcon from "../../../assets/images/message.jpeg";
 
 function PracticePage({ onNavigate }) {
+  const fullSubjects = [
+    {
+      id: "english",
+      title: "English Language",
+      buttonColor: "#1B75E5", // matching figma blue
+      titleColor: "#1B75E5",
+      image: englishFull,
+      altImage: "/assets/learnpage2.png"
+    },
+    {
+      id: "mathematics",
+      title: "Mathematics",
+      buttonColor: "#F58220", // figma orange
+      titleColor: "#F58220",
+      image: mathFull,
+      altImage: "/assets/learnpage3.png"
+    },
+    {
+      id: "computer",
+      title: "Computer Science",
+      buttonColor: "#1A9540", // figma green
+      titleColor: "#1A9540",
+      image: computerFull,
+      altImage: "/assets/learnpage4.png"
+    }
+  ];
+
+  const sections = [
+    {
+      id: "english-section",
+      title: "English",
+      items: [
+        "Lexis and Structure",
+        "Essay Writing",
+        "Oral English",
+        "Literature-in-English",
+        "Comprehension Summary",
+      ],
+      image: englishSection,
+      altImage: "/assets/learnpage5.png"
+    },
+    {
+      id: "mathematics-section",
+      title: "Mathematics",
+      items: [
+        "Number and Numeration",
+        "Calculus",
+        "Algebraic Processes",
+        "Statistics and Probability",
+        "Geometry and Trigonometry",
+      ],
+      image: mathSection,
+      altImage: "/assets/learnpage7.png"
+    },
+    {
+      id: "computer-section",
+      title: "Computer",
+      items: [
+        "Fundamentals of Computing",
+        "Networking & The Internet",
+        "Computer Architecture and Operations",
+        "Programming Logic",
+        "Software and Systems",
+        "Data Handling & Security",
+      ],
+      image: computerSection,
+      altImage: "/assets/learnpage8.png"
+    }
+  ];
+
   return (
-    <div className="practice-page-container">
-      <Navbar />
-
-      <div className="practice-content">
-        {/* Hero Section */}
-        <div className="practice-hero">
-          <img src="/src/assets/images/practice-banner.png" alt="Banner" className="hero-banner-bg" />
-          <div className="hero-text">
-            <h2>Test Yourself, Aragon</h2>
-            <p>How well do you know these subjects? Let's find out...</p>
+    <div className="practice-container">
+      {/* Top Navigation / Search Bar */}
+      <div className="practice-top-bar">
+        <div className="search-container">
+          <FaSearch className="search-icon" />
+          <input type="text" placeholder="Search" />
+        </div>
+        <div className="action-icons">
+          <div className="icon-box">
+            <FaBell />
+          </div>
+          <div className="icon-box">
+            <FaUser />
+          </div>
+          <div className="icon-box">
+            <FaCog />
           </div>
         </div>
+      </div>
 
-        <h3 className="section-title">YOU CAN TEST YOURSELF ON AN ENTIRE SUBJECT</h3>
-
-        {/* Full Test Cards */}
-        <div className="full-test-grid">
-          <div className="full-test-card">
-            <img src="/src/assets/images/study.jpeg" alt="English" className="card-illustration" />
-            <h4 className="text-blue">English Language</h4>
-            <button 
-              className="btn-full-test btn-blue" 
-              onClick={() => onNavigate("test", { subject: "English", topic: "Full Test" })}
-            >
-              TAKE A FULL TEST <FaExternalLinkAlt className="btn-icon" />
-            </button>
-          </div>
-          <div className="full-test-card">
-            <img src="/src/assets/images/desk study.jpeg" alt="Math" className="card-illustration" />
-            <h4 className="text-orange">Mathematics</h4>
-            <button 
-              className="btn-full-test btn-orange" 
-              onClick={() => onNavigate("test", { subject: "Mathematics", topic: "Full Test" })}
-            >
-              TAKE A FULL TEST <FaExternalLinkAlt className="btn-icon" />
-            </button>
-          </div>
-          <div className="full-test-card">
-            <img src="/src/assets/images/purple big guy.jpeg" alt="Computer" className="card-illustration" />
-            <h4 className="text-green">Computer Science</h4>
-            <button 
-              className="btn-full-test btn-green" 
-              onClick={() => onNavigate("test", { subject: "Computer Studies", topic: "Full Test" })}
-            >
-              TAKE A FULL TEST <FaExternalLinkAlt className="btn-icon" />
-            </button>
-          </div>
+      {/* Hero Banner Section using background image map */}
+      <div className="practice-banner">
+        <div className="banner-content">
+          <h1>Test Yourself, Aragon</h1>
+          <p>How well do you know a subject? Let's find out...</p>
         </div>
+        <div className="banner-image">
+          {/* Flying character */}
+          <img src="/assets/images/practice-banner.png" alt="Flying Character" onError={(e) => { e.target.style.display = 'none'; }} />
+        </div>
+      </div>
 
-        <h3 className="section-title">YOU CAN ALSO TAKE A TEST ON ANY SECTION OF A SUBJECT</h3>
+      {/* Full Subjects Section */}
+      <div className="section-header">
+        <h2>YOU CAN TEST YOURSELF ON AN ENTIRE SUBJECT</h2>
+      </div>
+      <div className="full-subjects-grid">
+        {fullSubjects.map((subject) => (
+          <div key={subject.id} className="subject-card">
+            <div className="subject-image">
+              <img 
+                src={subject.image} 
+                alt={subject.title} 
+                onError={(e) => { e.target.src = subject.altImage; }}
+              />
+            </div>
+            <h3 style={{ color: subject.titleColor }}>{subject.title}</h3>
+            <button 
+              className="full-test-btn" 
+              style={{ backgroundColor: subject.buttonColor }}
+              onClick={() => onNavigate && onNavigate("test", { subject: subject.id })}
+            >
+              TAKE A FULL TEST <HiOutlinePencilAlt className="pencil-icon" />
+            </button>
+          </div>
+        ))}
+      </div>
 
-        {/* Section Cards */}
-        <div className="section-test-list">
-          <div className="section-card">
-            <h4 className="section-header">English</h4>
-            <div className="section-body">
-              <img src="/src/assets/images/group english.jpeg" alt="English Topics" className="section-img" />
-              <div className="topics-list">
-                <ul>
-                  <li onClick={() => onNavigate("test", { subject: "English", topic: "Lexis and Structure" })}>Lexis and Structure</li>
-                  <li onClick={() => onNavigate("test", { subject: "English", topic: "Oral English" })}>Oral English</li>
-                  <li onClick={() => onNavigate("test", { subject: "English", topic: "Comprehension Summary" })}>Comprehension Summary</li>
-                </ul>
-                <ul>
-                  <li onClick={() => onNavigate("test", { subject: "English", topic: "Essay Writing" })}>Essay Writing</li>
-                  <li onClick={() => onNavigate("test", { subject: "English", topic: "Literature-in-English" })}>Literature-in-English</li>
+      {/* Sectional Tests Section */}
+      <div className="section-header">
+        <h2>YOU CAN ALSO TAKE A TEST ON ANY SECTION OF A SUBJECT</h2>
+      </div>
+      <div className="sectional-tests-list">
+        {sections.map((section) => (
+          <div key={section.id} className="sectional-card">
+            <h3 className="sectional-card-title">{section.title}</h3>
+            <div className="sectional-card-body">
+              <div className="sectional-image">
+                <img 
+                  src={section.image} 
+                  alt={section.title} 
+                  onError={(e) => { e.target.src = section.altImage; }}
+                />
+              </div>
+              <div className="sectional-content">
+                <ul className="sectional-items">
+                  {section.items.map((item, idx) => (
+                    <li key={idx}><span className="bullet-dot"></span>{item}</li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
+        ))}
+      </div>
 
-          <div className="section-card">
-            <h4 className="section-header">Mathematics</h4>
-            <div className="section-body">
-              <img src="/src/assets/images/numbers.jpeg" alt="Math Topics" className="section-img" />
-              <div className="topics-list">
-                <ul>
-                  <li onClick={() => onNavigate("test", { subject: "Mathematics", topic: "Number and Numeration" })}>Number and Numeration</li>
-                  <li onClick={() => onNavigate("test", { subject: "Mathematics", topic: "Algebraic Processes" })}>Algebraic Processes</li>
-                  <li onClick={() => onNavigate("test", { subject: "Mathematics", topic: "Geometry and Trigonometry" })}>Geometry and Trigonometry</li>
-                </ul>
-                <ul>
-                  <li onClick={() => onNavigate("test", { subject: "Mathematics", topic: "Calculus" })}>Calculus</li>
-                  <li onClick={() => onNavigate("test", { subject: "Mathematics", topic: "Statistics and Probability" })}>Statistics and Probability</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+      <div className="practice-footer-copyright">
+        © 2026 <span className="orange-text">SmartEdu</span>. All Rights Reserved
+      </div>
 
-          <div className="section-card">
-            <h4 className="section-header">Computer</h4>
-            <div className="section-body">
-              <img src="/src/assets/images/computer motherboard.jpeg" alt="Computer Topics" className="section-img" />
-              <div className="topics-list">
-                <ul>
-                  <li onClick={() => onNavigate("test", { subject: "Computer", topic: "Fundamentals of Computing" })}>Fundamentals of Computing</li>
-                  <li onClick={() => onNavigate("test", { subject: "Computer", topic: "Computer Architecture and Operations" })}>Computer Architecture and Operations</li>
-                  <li onClick={() => onNavigate("test", { subject: "Computer", topic: "Software and Systems" })}>Software and Systems</li>
-                </ul>
-                <ul>
-                  <li onClick={() => onNavigate("test", { subject: "Computer", topic: "Networking & The Internet" })}>Networking & The Internet</li>
-                  <li onClick={() => onNavigate("test", { subject: "Computer", topic: "Programming Logic" })}>Programming Logic</li>
-                  <li onClick={() => onNavigate("test", { subject: "Computer", topic: "Data Handling & Security" })}>Data Handling & Security</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="floating-chat">
-          <div className="chat-bubble">
-             <FaCommentDots size={24} color="white" />
-          </div>
-        </div>
-
-        <footer className="practice-footer">
-          © 2026 <span className="footer-brand">SmartEdu</span>. All Rights Reserved
-        </footer>
+      {/* Floating Chat Icon */}
+      <div className="floating-chat">
+        <img src={chatIcon} alt="chat" onError={(e) => { e.target.style.display='none'}} />
       </div>
     </div>
   );

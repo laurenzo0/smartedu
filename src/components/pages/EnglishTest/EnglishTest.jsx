@@ -48,71 +48,72 @@ function EnglishTest({ onNavigate, subject = "Mathematics", topic = "Number & Nu
 
   // Expanded Mock Data
   const englishQuestions = [
-    { type: "mcq", text: "The expression 'to beat around the bush' means to:", options: ["A. Speak indirectly about an issue", "B. Fight in the forest", "C. Avoid the bush", "D. Run away from trouble"] },
-    { type: "mcq", text: "Select the word that is nearest in meaning to 'Audacious':", options: ["A. Cowardly", "B. Bold", "C. Loud", "D. Silent"] },
-    { type: "mcq", text: "Choose the correct spelling:", options: ["A. Accomodation", "B. Accommodation", "C. Acommodation", "D. Acomodation"] },
-    { type: "mcq", text: "Which of the following sentences is grammatically correct?", options: ["A. He don't know the answer.", "B. He doesn't knows the answer.", "C. He doesn't know the answer.", "D. He do not knows the answer."] },
-    { type: "mcq", text: "Select the antonym for 'Abundant':", options: ["A. Plentiful", "B. Scarce", "C. Enough", "D. Overflowing"] },
-    { type: "mcq", text: "What is the synonym of 'Diligent'?", options: ["A. Lazy", "B. Hardworking", "C. Sleepy", "D. Arrogant"] },
-    { type: "mcq", text: "Choose the appropriate proposition: He is good ___ Mathematics.", options: ["A. in", "B. with", "C. at", "D. on"] },
-    { type: "mcq", text: "Which is a noun in this sentence: 'The quickly running fox jumped.'?", options: ["A. quickly", "B. running", "C. fox", "D. jumped"] },
-    { type: "mcq", text: "Find the error: 'One of the student is absent today.'", options: ["A. One", "B. student", "C. is", "D. today"] },
-    { type: "mcq", text: "To 'let the cat out of the bag' means:", options: ["A. Reveal a secret", "B. Save an animal", "C. Hide a mistake", "D. Cry loudly"] },
-    { type: "mcq", text: "What is the plural of 'Criterion'?", options: ["A. Criterions", "B. Criteria", "C. Criterias", "D. Critters"] },
-    { type: "mcq", text: "What figure of speech is 'The camera loves her'?", options: ["A. Simile", "B. Metaphor", "C. Personification", "D. Hyperbole"] },
-    { type: "mcq", text: "Identify the tense: 'I will have finished by 5 PM.'", options: ["A. Future Perfect", "B. Past Perfect", "C. Simple Future", "D. Future Continuous"] },
-    { type: "mcq", text: "What does 'Omnipresent' mean?", options: ["A. Knows everything", "B. Present everywhere", "C. All powerful", "D. Does everything"] },
+    { type: "mcq", text: "The expression 'to beat around the bush' means to:", options: ["A. Speak indirectly about an issue", "B. Fight in the forest", "C. Avoid the bush", "D. Run away from trouble"], correctAnswer: 0 },
+    { type: "mcq", text: "Select the word that is nearest in meaning to 'Audacious':", options: ["A. Cowardly", "B. Bold", "C. Loud", "D. Silent"], correctAnswer: 1 },
+    { type: "mcq", text: "Choose the correct spelling:", options: ["A. Accomodation", "B. Accommodation", "C. Acommodation", "D. Acomodation"], correctAnswer: 1 },
+    { type: "mcq", text: "Which of the following sentences is grammatically correct?", options: ["A. He don't know the answer.", "B. He doesn't knows the answer.", "C. He doesn't know the answer.", "D. He do not knows the answer."], correctAnswer: 2 },
+    { type: "mcq", text: "Select the antonym for 'Abundant':", options: ["A. Plentiful", "B. Scarce", "C. Enough", "D. Overflowing"], correctAnswer: 1 },
+    { type: "mcq", text: "What is the synonym of 'Diligent'?", options: ["A. Lazy", "B. Hardworking", "C. Sleepy", "D. Arrogant"], correctAnswer: 1 },
+    { type: "mcq", text: "Choose the appropriate proposition: He is good ___ Mathematics.", options: ["A. in", "B. with", "C. at", "D. on"], correctAnswer: 2 },
+    { type: "mcq", text: "Which is a noun in this sentence: 'The quickly running fox jumped.'?", options: ["A. quickly", "B. running", "C. fox", "D. jumped"], correctAnswer: 2 },
+    { type: "mcq", text: "Find the error: 'One of the student is absent today.'", options: ["A. One", "B. student", "C. is", "D. today"], correctAnswer: 1 },
+    { type: "mcq", text: "To 'let the cat out of the bag' means:", options: ["A. Reveal a secret", "B. Save an animal", "C. Hide a mistake", "D. Cry loudly"], correctAnswer: 0 },
+    { type: "mcq", text: "What is the plural of 'Criterion'?", options: ["A. Criterions", "B. Criteria", "C. Criterias", "D. Critters"], correctAnswer: 1 },
+    { type: "mcq", text: "What figure of speech is 'The camera loves her'?", options: ["A. Simile", "B. Metaphor", "C. Personification", "D. Hyperbole"], correctAnswer: 2 },
+    { type: "mcq", text: "Identify the tense: 'I will have finished by 5 PM.'", options: ["A. Future Perfect", "B. Past Perfect", "C. Simple Future", "D. Future Continuous"], correctAnswer: 0 },
+    { type: "mcq", text: "What does 'Omnipresent' mean?", options: ["A. Knows everything", "B. Present everywhere", "C. All powerful", "D. Does everything"], correctAnswer: 1 },
     {
       type: "mcq",
       hasPassage: true,
       passage: "Alade was overjoyed. What had happened was very rare in the history of the institution. He was brilliant and did well in his studies, but he was not the over-brilliant in the college; at least, he knew about three of his coursemates whose grade points had been exceptional. Yet, here he was, being favoured above those students. He could not believe his luck.\n\nBut it was no dream at all! On that Monday morning, his head of department summoned him, and this was quite unusual. He was full of trepidation as he went to see the head of department who looked at Alade solemnly and enquired about his parents and his studies...\n\n\"Well, I'm happy to hear that,\" replied the head of department. He proceeded, \"I have been directed to inform you that you have been selected to attend an exchange programme which offers opportunities for participants to work together in solving shared problems that endanger the future of the youth. You will be leaving with other students from various institutions in a week's time. Do you have a passport?\"\n\n\"Yes, sir, I do.\" Alade confirmed.\n\n\"Very well. Then get ready to leave for a six-month programme in Britain.\"",
       text: "Why was Alade surprised at the news?",
-      options: ["A. He was the most brilliant student.", "B. He was not the most brilliant but was chosen.", "C. He did not want to go to Britain.", "D. He had no passport."]
+      options: ["A. He was the most brilliant student.", "B. He was not the most brilliant but was chosen.", "C. He did not want to go to Britain.", "D. He had no passport."],
+      correctAnswer: 1
     }
   ];
 
   const mathQuestions = [
-    { type: "mcq", text: "What is the decimal value (base-10) of the number 1011₂ (base-2)?", options: ["A. 9", "B. 11", "C. 13", "D. 15"] },
-    { type: "mcq", text: "Solve for x: 2x + 5 = 15", options: ["A. 5", "B. 10", "C. 15", "D. 20"] },
-    { type: "mcq", text: "What is the square root of 144?", options: ["A. 10", "B. 12", "C. 14", "D. 16"] },
-    { type: "mcq", text: "Find the area of a circle with radius 7cm (take π=22/7):", options: ["A. 154 cm²", "B. 44 cm²", "C. 144 cm²", "D. 22 cm²"] },
-    { type: "mcq", text: "Simplify: 3(x + 2) - 2x", options: ["A. x + 6", "B. 5x + 6", "C. x - 6", "D. 5x - 6"] },
-    { type: "mcq", text: "What is 15% of 200?", options: ["A. 15", "B. 20", "C. 30", "D. 45"] },
-    { type: "mcq", text: "Solve: 8 ÷ 2(2 + 2) = ?", options: ["A. 1", "B. 16", "C. 8", "D. 4"] },
-    { type: "mcq", text: "If a triangle has angles 90° and 45°, what is the third angle?", options: ["A. 30°", "B. 45°", "C. 60°", "D. 90°"] },
-    { type: "mcq", text: "Convert 0.75 to a fraction:", options: ["A. 1/2", "B. 3/4", "C. 2/3", "D. 4/5"] },
-    { type: "mcq", text: "If 5 pencils cost $10, how much do 12 pencils cost?", options: ["A. $24", "B. $20", "C. $12", "D. $25"] },
-    { type: "mcq", text: "Which number is a prime number?", options: ["A. 9", "B. 15", "C. 21", "D. 29"] },
-    { type: "mcq", text: "What is the value of 5³?", options: ["A. 15", "B. 25", "C. 125", "D. 625"] },
-    { type: "mcq", text: "What is the perimeter of a rectangle with length 8 and width 5?", options: ["A. 13", "B. 26", "C. 40", "D. 18"] },
-    { type: "mcq", text: "Calculate the median of 2, 5, 8, 11, 14:", options: ["A. 5", "B. 8", "C. 11", "D. 6"] },
-    { type: "mcq", text: "Expand: (x + 2)(x + 3)", options: ["A. x² + 6", "B. x² + 5x + 6", "C. 2x + 5", "D. x² + x + 6"] }
+    { type: "mcq", text: "What is the decimal value (base-10) of the number 1011₂ (base-2)?", options: ["A. 9", "B. 11", "C. 13", "D. 15"], correctAnswer: 1 },
+    { type: "mcq", text: "Solve for x: 2x + 5 = 15", options: ["A. 5", "B. 10", "C. 15", "D. 20"], correctAnswer: 0 },
+    { type: "mcq", text: "What is the square root of 144?", options: ["A. 10", "B. 12", "C. 14", "D. 16"], correctAnswer: 1 },
+    { type: "mcq", text: "Find the area of a circle with radius 7cm (take π=22/7):", options: ["A. 154 cm²", "B. 44 cm²", "C. 144 cm²", "D. 22 cm²"], correctAnswer: 0 },
+    { type: "mcq", text: "Simplify: 3(x + 2) - 2x", options: ["A. x + 6", "B. 5x + 6", "C. x - 6", "D. 5x - 6"], correctAnswer: 0 },
+    { type: "mcq", text: "What is 15% of 200?", options: ["A. 15", "B. 20", "C. 30", "D. 45"], correctAnswer: 2 },
+    { type: "mcq", text: "Solve: 8 ÷ 2(2 + 2) = ?", options: ["A. 1", "B. 16", "C. 8", "D. 4"], correctAnswer: 1 },
+    { type: "mcq", text: "If a triangle has angles 90° and 45°, what is the third angle?", options: ["A. 30°", "B. 45°", "C. 60°", "D. 90°"], correctAnswer: 1 },
+    { type: "mcq", text: "Convert 0.75 to a fraction:", options: ["A. 1/2", "B. 3/4", "C. 2/3", "D. 4/5"], correctAnswer: 1 },
+    { type: "mcq", text: "If 5 pencils cost $10, how much do 12 pencils cost?", options: ["A. $24", "B. $20", "C. $12", "D. $25"], correctAnswer: 0 },
+    { type: "mcq", text: "Which number is a prime number?", options: ["A. 9", "B. 15", "C. 21", "D. 29"], correctAnswer: 3 },
+    { type: "mcq", text: "What is the value of 5³?", options: ["A. 15", "B. 25", "C. 125", "D. 625"], correctAnswer: 2 },
+    { type: "mcq", text: "What is the perimeter of a rectangle with length 8 and width 5?", options: ["A. 13", "B. 26", "C. 40", "D. 18"], correctAnswer: 1 },
+    { type: "mcq", text: "Calculate the median of 2, 5, 8, 11, 14:", options: ["A. 5", "B. 8", "C. 11", "D. 6"], correctAnswer: 1 },
+    { type: "mcq", text: "Expand: (x + 2)(x + 3)", options: ["A. x² + 6", "B. x² + 5x + 6", "C. 2x + 5", "D. x² + x + 6"], correctAnswer: 1 }
   ];
 
   const computerQuestions = [
-    { type: "mcq", text: "What does CPU stand for?", options: ["A. Central Processing Unit", "B. Computer Personal Unit", "C. Central Processor Unit", "D. Control Processing Unit"] },
-    { type: "mcq", text: "Which of the following is an input device?", options: ["A. Monitor", "B. Printer", "C. Keyboard", "D. Speaker"] },
-    { type: "mcq", text: "What does RAM stand for?", options: ["A. Random Access Memory", "B. Read Only Memory", "C. Random Active Memory", "D. Read Access Memory"] },
-    { type: "mcq", text: "Which of the following is an operating system?", options: ["A. Microsoft Word", "B. Linux", "C. Google Chrome", "D. Python"] },
-    { type: "mcq", text: "In computing, what is a bit?", options: ["A. A single binary digit (0 or 1)", "B. 8 bytes", "C. A small piece of data", "D. A network protocol"] },
-    { type: "mcq", text: "What does HTTP stand for?", options: ["A. HyperText Transfer Protocol", "B. HyperLink Transfer Protocol", "C. HyperText Transmission Protocol", "D. Hyper Terminal Transfer Protocol"] },
-    { type: "mcq", text: "Which language is primarily used for web styling?", options: ["A. HTML", "B. Python", "C. CSS", "D. C++"] },
-    { type: "mcq", text: "What is a motherboard?", options: ["A. A software program", "B. The main circuit board", "C. An input device", "D. A power supply"] },
-    { type: "mcq", text: "What does GUI stand for?", options: ["A. Graphical User Interface", "B. General Utility Interface", "C. Graphic Unit Integration", "D. General User Interface"] },
-    { type: "mcq", text: "What is phishing?", options: ["A. A new programming language", "B. A cyber-attack to steal data", "C. A hardware device", "D. A network error"] },
-    { type: "mcq", text: "Which component is known as the brain of the computer?", options: ["A. RAM", "B. Hard Drive", "C. CPU", "D. Monitor"] },
-    { type: "mcq", text: "What is cloud computing?", options: ["A. Weather predicting servers", "B. Storing data over the internet", "C. Local hardware storage", "D. Wireless keyboards"] },
-    { type: "mcq", text: "Which is a volatile memory?", options: ["A. ROM", "B. Hard Disk", "C. SSD", "D. RAM"] },
-    { type: "mcq", text: "What does IP stand for in 'IP Address'?", options: ["A. Internet Provider", "B. Internal Process", "C. Internet Protocol", "D. International Protocol"] },
-    { type: "mcq", text: "What is an algorithm?", options: ["A. A computer component", "B. A step-by-step procedure to solve a problem", "C. A type of virus", "D. A database"] }
+    { type: "mcq", text: "What does CPU stand for?", options: ["A. Central Processing Unit", "B. Computer Personal Unit", "C. Central Processor Unit", "D. Control Processing Unit"], correctAnswer: 0 },
+    { type: "mcq", text: "Which of the following is an input device?", options: ["A. Monitor", "B. Printer", "C. Keyboard", "D. Speaker"], correctAnswer: 2 },
+    { type: "mcq", text: "What does RAM stand for?", options: ["A. Random Access Memory", "B. Read Only Memory", "C. Random Active Memory", "D. Read Access Memory"], correctAnswer: 0 },
+    { type: "mcq", text: "Which of the following is an operating system?", options: ["A. Microsoft Word", "B. Linux", "C. Google Chrome", "D. Python"], correctAnswer: 1 },
+    { type: "mcq", text: "In computing, what is a bit?", options: ["A. A single binary digit (0 or 1)", "B. 8 bytes", "C. A small piece of data", "D. A network protocol"], correctAnswer: 0 },
+    { type: "mcq", text: "What does HTTP stand for?", options: ["A. HyperText Transfer Protocol", "B. HyperLink Transfer Protocol", "C. HyperText Transmission Protocol", "D. Hyper Terminal Transfer Protocol"], correctAnswer: 0 },
+    { type: "mcq", text: "Which language is primarily used for web styling?", options: ["A. HTML", "B. Python", "C. CSS", "D. C++"], correctAnswer: 2 },
+    { type: "mcq", text: "What is a motherboard?", options: ["A. A software program", "B. The main circuit board", "C. An input device", "D. A power supply"], correctAnswer: 1 },
+    { type: "mcq", text: "What does GUI stand for?", options: ["A. Graphical User Interface", "B. General Utility Interface", "C. Graphic Unit Integration", "D. General User Interface"], correctAnswer: 0 },
+    { type: "mcq", text: "What is phishing?", options: ["A. A new programming language", "B. A cyber-attack to steal data", "C. A hardware device", "D. A network error"], correctAnswer: 1 },
+    { type: "mcq", text: "Which component is known as the brain of the computer?", options: ["A. RAM", "B. Hard Drive", "C. CPU", "D. Monitor"], correctAnswer: 2 },
+    { type: "mcq", text: "What is cloud computing?", options: ["A. Weather predicting servers", "B. Storing data over the internet", "C. Local hardware storage", "D. Wireless keyboards"], correctAnswer: 1 },
+    { type: "mcq", text: "Which is a volatile memory?", options: ["A. ROM", "B. Hard Disk", "C. SSD", "D. RAM"], correctAnswer: 3 },
+    { type: "mcq", text: "What does IP stand for in 'IP Address'?", options: ["A. Internet Provider", "B. Internal Process", "C. Internet Protocol", "D. International Protocol"], correctAnswer: 2 },
+    { type: "mcq", text: "What is an algorithm?", options: ["A. A computer component", "B. A step-by-step procedure to solve a problem", "C. A type of virus", "D. A database"], correctAnswer: 1 }
   ];
 
-  const getMockQuestion = () => {
+  const getMockQuestionData = (qNum) => {
     const isEnglish = subject.toLowerCase().includes("english");
     const isMath = subject.toLowerCase().includes("math");
     const isComputer = subject.toLowerCase().includes("computer");
 
-    if (isEnglish && currentQuestion > 50) {
+    if (isEnglish && qNum > 50) {
       return {
         type: "essay",
         text: "Answer any of the following essay topics in not more than 500 words:",
@@ -130,11 +131,10 @@ function EnglishTest({ onNavigate, subject = "Mathematics", topic = "Number & Nu
     if (isMath) arr = mathQuestions;
     if (isComputer) arr = computerQuestions;
 
-    // Cycle through questions based on currentQuestion
-    return arr[(currentQuestion - 1) % arr.length];
+    return arr[(qNum - 1) % arr.length];
   };
 
-  const currentData = getMockQuestion();
+  const currentData = getMockQuestionData(currentQuestion);
 
   const handleOptionSelect = (index) => {
     setSelectedAnswers({ ...selectedAnswers, [currentQuestion]: index });
@@ -160,6 +160,32 @@ function EnglishTest({ onNavigate, subject = "Mathematics", topic = "Number & Nu
     if (subject.toLowerCase().includes("math")) return "How well do you know how to work with numbers?";
     if (subject.toLowerCase().includes("computer")) return "If you want to be a tech bro/sis, here's your head start.";
     return "How well can you use the right words and tenses?";
+  };
+
+  const calculateScore = () => {
+    let earnedPoints = 0;
+    const isEnglish = subject.toLowerCase().includes("english");
+    const mcqCount = isEnglish ? 50 : totalQuestions;
+
+    for (let i = 1; i <= mcqCount; i++) {
+      const qData = getMockQuestionData(i);
+      if (selectedAnswers[i] === qData.correctAnswer) {
+        earnedPoints++;
+      }
+    }
+
+    let finalScore = (earnedPoints / totalQuestions) * 100;
+    
+    // Add points for essay if it's English (up to 16% ~10 pts)
+    if (isEnglish) {
+       let essayScore = 0;
+       if (essayAnswer.length > 50) essayScore = 16.6; 
+       else if (essayAnswer.length > 10) essayScore = 8;
+       finalScore += essayScore;
+    }
+
+    if (finalScore > 100) finalScore = 100;
+    return Math.round(finalScore);
   };
 
   const renderQuestionGrid = () => (
@@ -322,7 +348,10 @@ function EnglishTest({ onNavigate, subject = "Mathematics", topic = "Number & Nu
             <div className="modal-buttons">
               <button 
                 className="btn-modal yes" 
-                onClick={() => onNavigate("result", { score: 80, subject, topic })}
+                onClick={() => {
+                  const score = calculateScore();
+                  onNavigate("result", { score, subject, topic });
+                }}
               >
                 Yes
               </button>
