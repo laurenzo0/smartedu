@@ -27,6 +27,8 @@ function App() {
 
   const renderPage = () => {
     switch (currentPage) {
+      case "landing":
+        return <LandingPage onNavigate={handleNavigate} />;
       case "login":
         return <Login onNavigate={handleNavigate} />;
       case "signup":
@@ -74,9 +76,23 @@ function App() {
           </div>
         );
       case "test":
-        return <EnglishTest onNavigate={handleNavigate} {...params} />;
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
+            <div className="main-section">
+              <EnglishTest onNavigate={handleNavigate} {...params} />
+            </div>
+          </div>
+        );
       case "result":
-        return <ResultPage onNavigate={handleNavigate} {...params} />;
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
+            <div className="main-section">
+              <ResultPage onNavigate={handleNavigate} {...params} />
+            </div>
+          </div>
+        );
       case "dashboard":
         return (
           <div className="app-layout">

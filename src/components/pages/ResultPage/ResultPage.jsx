@@ -1,109 +1,70 @@
 import React, { useEffect, useState } from "react";
 import "./ResultPage.css";
-import { FaTrophy, FaRedo, FaHome, FaChevronRight } from "react-icons/fa";
+import Navbar from "../../reusableUi/Navbar/Navbar";
 
-function ResultPage({ score = 65, subject = "Mathematics", topic = "Number & Numeration", onNavigate }) {
-  const [offset, setOffset] = useState(440); // 2 * PI * r (r=70)
+function ResultPage({ score = 80, onNavigate }) {
+  const [offset, setOffset] = useState(628); // 2 * PI * r (r=100) -> approx 628
   
   useEffect(() => {
-    const progressOffset = 440 - (score / 100) * 440;
+    // Progress calculation
+    const progressOffset = 628 - (score / 100) * 628;
     const timer = setTimeout(() => {
       setOffset(progressOffset);
-    }, 100);
+    }, 300); // slight delay for animation effect
     return () => clearTimeout(timer);
   }, [score]);
 
-  const getRankData = () => {
-    if (score >= 80) return { title: `Expert in ${subject}`, icon: "🏆", color: "#2D6A4F" };
-    if (score >= 60) return { title: `Advanced in ${subject}`, icon: "🎖️", color: "#ED810E" };
-    return { title: `Keep Practicing ${subject}`, icon: "📚", color: "#64748B" };
-  };
-
-  const [showCorrections, setShowCorrections] = useState(false);
-  
-  const rank = getRankData();
-  const isCongratulations = score >= 60;
-
-  // Mock corrections data
-  const corrections = [
-    { q: "What is the value of pi?", user: "3.12", correct: "3.14", isCorrect: false },
-    { q: "Capital of France?", user: "Paris", correct: "Paris", isCorrect: true },
-    { q: "Square root of 256?", user: "14", correct: "16", isCorrect: false },
-  ];
-
   return (
-    <div className="result-container">
-      <div className="result-card">
-        {isCongratulations && (
-          <div className="confetti-wrapper">
-            {[...Array(12)].map((_, i) => (
-              <div key={i} className={`confetti-piece p${i}`}></div>
+    <div className="result-exam-container">
+      <Navbar />
+
+      <div className="result-exam-content">
+        <div className="result-celebration-card">
+          
+          <div className="confetti-container">
+            {[...Array(20)].map((_, i) => (
+              <div key={i} className={`confetti-particle p${i}`}></div>
             ))}
-            <div className="congrats-text">Congratulations!</div>
-            <div className="user-name">Aragon</div>
           </div>
-        )}
 
-        {!isCongratulations && (
-          <h2 className="score-header">FOR THIS TEST, YOU SCORED:</h2>
-        )}
+          <h1 className="congrats-title">Congratulations!</h1>
+          <h2 className="congrats-name">Aragon</h2>
 
-        <div className="progress-circle-wrapper">
-          <svg className="progress-svg" width="200" height="200">
-            <circle
-              className="progress-bg"
-              cx="100"
-              cy="100"
-              r="70"
-            />
-            <circle
-              className="progress-bar"
-              cx="100"
-              cy="100"
-              r="70"
-              style={{ strokeDashoffset: offset }}
-            />
-          </svg>
-          <div className="percentage-text">{score}%</div>
-        </div>
-
-        {isCongratulations && (
-          <div className="rank-badge">
-            <span className="rank-text">{rank.title}</span>
-            <span className="rank-icon">{rank.icon}</span>
+          <div className="circle-loader-container">
+            <svg className="circular-chart" viewBox="0 0 240 240">
+              <path
+                className="circle-bg"
+                d="M120 20
+                   a 100 100 0 0 1 0 200
+                   a 100 100 0 0 1 0 -200"
+              />
+              <path
+                className="circle-fill"
+                strokeDasharray="628"
+                strokeDashoffset={offset}
+                d="M120 20
+                   a 100 100 0 0 1 0 200
+                   a 100 100 0 0 1 0 -200"
+              />
+            </svg>
+            <div className="circle-text">{score}%</div>
           </div>
-        )}
 
-        <div className="result-actions">
-          <button className="view-corrections" onClick={() => setShowCorrections(!showCorrections)}>
-            {showCorrections ? "Hide Corrections" : "View Corrections"}
-          </button>
-          
-          {showCorrections && (
-            <div className="corrections-list">
-              {corrections.map((item, idx) => (
-                <div key={idx} className={`correction-item ${item.isCorrect ? "correct" : "incorrect"}`}>
-                  <p className="correction-q">Q: {item.q}</p>
-                  <p className="correction-ans">Your Answer: <span className="u-ans">{item.user}</span> | Correct: <span className="c-ans">{item.correct}</span></p>
-                </div>
-              ))}
-            </div>
-          )}
-          
-          {!isCongratulations && (
-            <div className="mastery-link" onClick={() => onNavigate("practice")}>
-              Click here to gain more mastery on <span className="topic-name">{topic}</span>
-            </div>
-          )}
-        </div>
+          <div className="rank-unlock-section">
+            <span className="rank-label">Expert Rank Unlocked</span>
+            <span className="rank-badge-icon">🏅</span>
+          </div>
 
-        <div className="bottom-navigation">
-          <button className="btn-secondary" onClick={() => onNavigate("practice")}>
-            <FaHome /> Back to Dashboard
-          </button>
-          <button className="btn-primary" onClick={() => onNavigate("practice")}>
-            Try Another Subject <FaChevronRight />
-          </button>
+          <div className="corrections-link-container">
+            <button className="btn-view-corrections" onClick={() => onNavigate("practice")}>
+              View Corrections
+            </button>
+          </div>
+
+          <p className="designer-note">
+            <strong>TO THE FRONT-END DESIGNER:</strong> There will be a load animation for the circle to fill up progressively + subtle confetti/particles when it reaches 65%
+          </p>
+
         </div>
       </div>
     </div>

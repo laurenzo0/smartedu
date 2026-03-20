@@ -1,107 +1,82 @@
-.navbar{
-    height:70px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 20px;
-    width: 100%;
-    gap:20px;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
-/* Search box container */
-.search-box{
-    display:flex;
-    align-items:center;
-    background:white;
-    padding:8px 12px;
-    border-radius:3px;
-
-    flex:1; /* this makes the search box expand */
-
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+.search-box {
+  flex: 1;
+  max-width: 800px;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  border: 1px solid #E5EAF0;
 }
 
-/* Input field */
-.search-box input{
-    border:none;
-    outline:none;
-    margin-left:8px;
-    width:100%;
-    font-size:14px;
+.search-icon {
+  color: #8E95A2;
+  margin-right: 1rem;
+  font-size: 1.1rem;
 }
 
-/* Search icon */
-.search-icon{
-    color:gray;
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+  color: #16264A;
+  font-family: inherit;
+  background: transparent;
 }
 
-/* Right side icons */
-.nav-icons{
-    display:flex;
-    gap:15px;
+.nav-icons {
+  display: flex;
+  gap: 1.2rem;
 }
 
-/* Notification & profile boxes */
-.icon-box{
-    background:white;
-    padding:10px;
-    border-radius:3px;
-    cursor:pointer;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+.icon-box {
+  background: white;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: #16264A;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  border: 1px solid #E5EAF0;
+  transition: all 0.2s;
+}
+
+.icon-box:hover {
+  background-color: #F8FAFC;
 }
 
 /* Responsive fixes */
 @media (max-width: 1024px) {
-    .navbar {
-        height: 60px;
-        padding: 0 15px;
-        gap: 15px;
-    }
-    
-    .icon-box {
-        padding: 8px;
-    }
+  .navbar {
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        padding: 10px;
-        gap: 10px;
-    }
-
-    .search-box {
-        padding: 6px 10px;
-    }
-
-    .search-box input {
-        font-size: 13px;
-    }
-
-    .nav-icons {
-        gap: 8px;
-    }
-
-    .icon-box {
-        padding: 6px;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        height: auto;
-        flex-direction: column;
-        padding: 15px 10px;
-        gap: 15px;
-    }
-
-    .search-box {
-        width: 100%;
-        order: 2;
-    }
-
-    .nav-icons {
-        width: 100%;
-        justify-content: flex-end;
-        order: 1;
-    }
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .search-box {
+    max-width: 100%;
+  }
+  .nav-icons {
+    width: 100%;
+    justify-content: flex-end;
+  }
 }

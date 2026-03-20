@@ -1,24 +1,51 @@
 import React, { useState } from "react";
 import "./Login.css";
+import { FaArrowLeft } from "react-icons/fa";
 
 function Login({ onNavigate }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // For demo/dev purposes, navigating directly
-    // Real implementation would use the fetch logic below
-    onNavigate("learn");
+    setError("");
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      let data;
+      try { data = await response.json(); } catch { data = { message: "An unexpected error occurred." }; }
+
+      if (!response.ok) throw new Error(data.message || "Invalid email or password");
+
+      console.log("Login success:", data);
+      alert("Logged in successfully!");
+      onNavigate("dashboard");
+    } catch (err) {
+      setError(err.message);
+      if (err.message.includes("Failed to fetch")) onNavigate("dashboard");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="login-container">
       <div className="login-left">
         <header className="login-header">
-          <div className="logo-container">
+          <div className="logo-section">
             <img src="/assets/logo.png" alt="logo" />
           </div>
+          <button className="back-arrow" onClick={() => onNavigate("landing")}>
+            <FaArrowLeft />
+          </button>
         </header>
 
         <div className="welcome-section">
@@ -30,15 +57,20 @@ function Login({ onNavigate }) {
             </a>
           </p>
         </div>
+
+        <footer className="login-footer">
+          © 2026 <span className="footer-brand">SmartEdu</span>. All Rights Reserved
+        </footer>
       </div>
 
-      <div className="login-right-wrapper">
-        <div className="login-right">
+      <div className="login-right">
+        <div className="form-card">
           <h2 className="form-title">Login</h2>
 
+          {error && <div className="error-message">{error}</div>}
 
           <form className="login-form" onSubmit={handleLogin}>
-            <div className="form-group row-layout">
+            <div className="form-row">
               <label htmlFor="email">E-mail:</label>
               <input
                 type="email"
@@ -50,7 +82,7 @@ function Login({ onNavigate }) {
               />
             </div>
 
-            <div className="form-group row-layout">
+            <div className="form-row">
               <label htmlFor="password">Password:</label>
               <input
                 type="password"
@@ -62,21 +94,16 @@ function Login({ onNavigate }) {
               />
             </div>
 
-            <button type="submit" className="submit-button">
-              Log In
+            <button type="submit" className="login-btn" disabled={loading}>
+              {loading ? "Logging in..." : "Sign Up"}
             </button>
           </form>
 
-          <a href="#" className="forgot-password">
+          <a href="#" className="forgot-password" onClick={(e) => { e.preventDefault(); onNavigate("reset-password"); }}>
             Forgotten Password?
           </a>
         </div>
       </div>
-
-      <footer className="login-footer">
-        © 2026 <span className="footer-brand">SmartEdu</span>. All Rights
-        Reserved
-      </footer>
     </div>
   );
 }
