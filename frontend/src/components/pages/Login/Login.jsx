@@ -11,37 +11,9 @@ function Login({ onNavigate }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
-    setLoading(true);
-
-    try {
-      // Send a POST request to backend
-      const API_URL = import.meta.env.VITE_API_URL || "/api";
-      const response = await fetch(`${API_URL}/auth/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      let data;
-      try {
-        data = await response.json();
-      } catch {
-        data = { message: "An unexpected error occurred." };
-      }
-
-      if (!response.ok) {
-        throw new Error(data.message || "Invalid email or password");
-      }
-
-      console.log("Login success:", data);
-      onNavigate("dashboard"); // Navigate to dashboard on success
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
+    
+    // Bypass backend completely as requested and go straight to the dashboard
+    onNavigate("dashboard");
   };
 
   return (

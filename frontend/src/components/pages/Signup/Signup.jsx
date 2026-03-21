@@ -39,25 +39,11 @@ function Signup({ onNavigate }) {
       return;
     }
 
-    setLoading(true);
-
-    try {
-      // Convert date_of_birth to ISO format for MongoDB
-      const payload = {
-        ...formData,
-        date_of_birth: new Date(formData.date_of_birth).toISOString(),
-      };
-      const data = await registerUser(payload);
-      // Registration successful — redirect based on role
-      if (formData.role === "parent") {
-        onNavigate("parent-dashboard", { access_code: data.access_code });
-      } else {
-        onNavigate("login");
-      }
-    } catch (err) {
-      setError(err.message || "Registration failed. Please try again.");
-    } finally {
-      setLoading(false);
+    // Bypass backend completely as requested and go straight to the dashboard
+    if (formData.role === "parent") {
+      onNavigate("parent-dashboard");
+    } else {
+      onNavigate("dashboard");
     }
   };
 
@@ -208,8 +194,8 @@ function Signup({ onNavigate }) {
               />
             </div>
 
-            <button type="submit" className="signup-btn" disabled={loading}>
-              {loading ? "Signing Up..." : "Sign Up"}
+            <button type="submit" className="signup-btn">
+              Sign Up
             </button>
           </form>
         </div>
