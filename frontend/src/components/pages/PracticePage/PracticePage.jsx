@@ -1,6 +1,6 @@
 import Navbar from "../../reusableUi/Navbar/Navbar";
 import NarrowSidebar from "../../reusableUi/Sidebar/NarrowSidebar";
-import './practice.css';
+import './Practice.css';
 
 function PracticePage({ onNavigate }) {
     return (
