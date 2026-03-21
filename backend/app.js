@@ -20,6 +20,9 @@ import cors from 'cors';
 
 const app  = express();
 
+// Trust the reverse proxy (Render, Heroku, etc.) for rate limiting and IP tracking
+app.set('trust proxy', 1);
+
 //include middleware 
 app.use(express.json());
 
