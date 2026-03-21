@@ -23,6 +23,9 @@ import ComputerTest from "./components/pages/ComputerTest/ComputerTest";
 import ResultPage from "./components/pages/ResultPage/ResultPage";
 import CorrectionsPage from "./components/pages/CorrectionsPage/CorrectionsPage";
 import CardReport from "./components/pages/Result/CardReport";
+import Settings from "./components/pages/Settings/Settings";
+import FAQ from "./components/pages/FAQ/FAQ";
+import ParentReport from "./components/pages/ParentReport/ParentReport";
 
 import "./App.css";
 
@@ -85,6 +88,15 @@ function App() {
             </div>
           </div>
         );
+      case "settings":
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
+            <div className="main-section">
+              <Settings onNavigate={handleNavigate} />
+            </div>
+          </div>
+        );
       case "test": {
         let TestComponent = EnglishTest;
         if (params.subject?.toLowerCase().includes("math")) {
@@ -125,6 +137,24 @@ function App() {
             <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
             <div className="main-section">
               <CorrectionsPage onNavigate={handleNavigate} {...params} />
+            </div>
+          </div>
+        );
+      case "faq":
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
+            <div className="main-section">
+              <FAQ />
+            </div>
+          </div>
+        );
+      case "parent-report":
+        return (
+          <div className="app-layout">
+            <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
+            <div className="main-section">
+              <ParentReport />
             </div>
           </div>
         );

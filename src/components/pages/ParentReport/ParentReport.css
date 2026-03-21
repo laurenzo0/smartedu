@@ -1,0 +1,244 @@
+.parent-report-container {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+}
+
+.report-header-section {
+    margin-bottom: 30px;
+}
+
+.report-title {
+    font-size: 1.2rem;
+    color: #444;
+    margin: 20px 0 10px 0;
+    font-weight: 700;
+}
+
+.profile-banner {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.profile-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.profile-pic-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: #e2e8f0;
+    border-radius: 12px;
+}
+
+.profile-details h3 {
+    font-size: 1.8rem;
+    color: #041830;
+    margin-bottom: 5px;
+}
+
+.profile-details p {
+    color: #888;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.header-illustration img {
+    height: 120px;
+}
+
+.report-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.stats-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.stats-card h3 {
+    font-size: 1.2rem;
+    color: #041830;
+    margin-bottom: 10px;
+}
+
+.total-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.segmented-bar {
+    width: 100%;
+    height: 12px;
+    display: flex;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #eee;
+    margin-bottom: 30px;
+}
+
+.segment.blue { background-color: #055eca; }
+.segment.orange { background-color: #f57c00; }
+.segment.green { background-color: #2a862a; }
+
+.stats-legend {
+    list-style: none;
+    padding: 0;
+}
+
+.stats-legend li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #444;
+    font-weight: 500;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: 15px;
+}
+
+.dot.blue { background-color: #055eca; }
+.dot.orange { background-color: #f57c00; }
+.dot.green { background-color: #2a862a; }
+
+.value {
+    margin-left: auto;
+    font-weight: 700;
+}
+
+.performance-overview-section {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.performance-overview-section h3 {
+    font-size: 1.2rem;
+    color: #041830;
+    margin-bottom: 5px;
+}
+
+.performance-status {
+    color: #888;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.gauge-container {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.gauge-svg {
+    width: 100%;
+}
+
+.gauge-value {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #444;
+}
+
+.subjects-performance-section {
+    padding: 20px 0;
+}
+
+.subjects-performance-section h3 {
+    text-align: center;
+    color: #1263E1;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.subject-cards {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.subject-card {
+    width: 300px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+}
+
+.subject-card img {
+    object-fit: contain;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.subject-card h4 {
+    color: #055eca;
+    font-size: 1.1rem;
+}
+
+.subject-card:nth-child(2) h4 { color: #f57c00; }
+.subject-card:nth-child(3) h4 { color: #2a862a; }
+
+.report-footer {
+    padding: 30px 0;
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .subject-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .report-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .profile-banner {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .profile-info {
+        flex-direction: column;
+    }
+}

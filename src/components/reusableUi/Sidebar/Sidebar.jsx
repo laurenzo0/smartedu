@@ -7,9 +7,13 @@ import {
   FaChartBar,
   FaUser,
   FaEllipsisH,
+  FaCog,
+  FaQuestionCircle,
+  FaUserShield,
 } from "react-icons/fa";
 
 function Sidebar({ onNavigate, currentPage }) {
+  const [showMore, setShowMore] = useState(false);
 
 
   return (
@@ -72,12 +76,39 @@ function Sidebar({ onNavigate, currentPage }) {
         </div>
 
         <div
-          className={`menu-item ${currentPage === "result" ? "active" : ""}`}
-          onClick={() => onNavigate("result")}
+          className={`menu-item ${currentPage === "settings" ? "active" : ""}`}
+          onClick={() => onNavigate("settings")}
+        >
+          <FaCog className="icon" />
+          <span className="text">Settings</span>
+        </div>
+
+        <div
+          className={`menu-item ${currentPage === "more" ? "active" : ""}`}
+          onClick={() => setShowMore(!showMore)}
         >
           <FaEllipsisH className="icon" />
           <span className="text">More</span>
         </div>
+
+        {showMore && (
+          <div className="sub-menu">
+            <div
+              className={`menu-item sub-item ${currentPage === "faq" ? "active" : ""}`}
+              onClick={() => onNavigate("faq")}
+            >
+              <FaQuestionCircle className="icon" />
+              <span className="text">FAQ</span>
+            </div>
+            <div
+              className={`menu-item sub-item ${currentPage === "parent-report" ? "active" : ""}`}
+              onClick={() => onNavigate("parent-report")}
+            >
+              <FaUserShield className="icon" />
+              <span className="text">Parent Report</span>
+            </div>
+          </div>
+        )}
       </nav>
     </div>
   );

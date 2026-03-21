@@ -50,9 +50,9 @@ function Login({ onNavigate }) {
       <div className="login-left">
         <header className="login-header">
           <div className="logo-section">
-            <img src="/assets/logo3.png" alt="SmartEdu Logo" />
+            <img src="src/assets/logo2.png" alt="SmartEdu Logo" />
           </div>
-          <button className="back-arrow" onClick={() => onNavigate("learn")}>
+          <button className="back-arrow" onClick={() => onNavigate("landing")}>
             <FaArrowLeft />
           </button>
         </header>

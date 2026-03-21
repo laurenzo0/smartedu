@@ -66,11 +66,13 @@
 
 /* Main Content Area */
 .report-content {
-  padding: 2rem 3rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  align-items: center;
+  gap: 1.5rem;
   position: relative;
+  width: auto;
 }
 
 /* My Result Section */
@@ -78,6 +80,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  width: 95%; /* Take most of the space but center */
+  max-width: 1200px;
 }
 
 .result-header {
@@ -135,33 +139,36 @@
 .questions-section {
   background: white;
   border-radius: 16px;
-  border: 1px solid #E2E8F0;
-  padding: 2.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+  border: 1px solid #E5EAF0;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  width: 98%;
+  max-width: 1400px;
 }
 
 .section-title {
   text-align: center;
-  color: #0F62FE;
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin: 0 0 3rem 0;
+  color: #1E3A8A;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 4rem 0;
 }
 
 .subjects-grid {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  width: 100%;
 }
 
 .subject-row {
   display: flex;
   align-items: flex-start;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 .subject-info-box {
-  width: 260px;
+  width: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -169,9 +176,9 @@
   background: white;
   border: 1px solid #E5EAF0;
   border-radius: 16px;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem;
   flex-shrink: 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
 }
 
 .subject-image {
@@ -192,14 +199,19 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 
 .score-item {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.score-item:last-child {
+  border-bottom: none;
 }
 
 .score-icon-wrapper {
@@ -212,14 +224,15 @@
   justify-content: center;
   color: #475569;
   flex-shrink: 0;
-  margin-top: -4px;
+  margin-top: 0;
 }
 
 .progress-container {
+  width: 50vw;
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.6rem;
 }
 
 .progress-top-row {
@@ -230,20 +243,20 @@
 
 /* In the image, the label is under the bar. Update: Wait, actually the design might put it under or over. We will stack label top, then track. But wait, in the design the dark blue is the fill, and the label is below the bar? Let's check image. */
 .score-label {
-  font-size: 0.75rem;
-  color: #2D9CDB;
+  font-size: 0.7rem;
+  color: #1E3A8A; /* Matching dark blue in Figma */
   font-weight: 500;
 }
 
 .score-ratio {
-  font-size: 0.7rem;
-  color: #2D9CDB;
+  font-size: 0.65rem;
+  color: #1E3A8A; /* Matching dark blue in Figma */
   font-weight: 600;
 }
 
 .progress-track {
   width: 100%;
-  height: 6px;
+  height: 4px; /* Thinner bar as per Figma */
   background-color: #E0F2FE;
   border-radius: 4px;
   overflow: hidden;

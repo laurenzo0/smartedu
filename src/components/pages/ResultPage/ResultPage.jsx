@@ -64,10 +64,6 @@ function ResultPage({ score = 80, onNavigate, subject, topic, selectedAnswers })
             </button>
           </div>
 
-          <p className="designer-note">
-            <strong>TO THE FRONT-END DESIGNER:</strong> There will be a load animation for the circle to fill up progressively + subtle confetti/particles when it reaches 65%
-          </p>
-
         </div>
       </div>
     </div>

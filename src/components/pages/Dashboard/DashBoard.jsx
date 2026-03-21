@@ -2,7 +2,7 @@ import React from 'react';
 import './dashboard.css';
 import Navbar from '../../reusableUi/Navbar/Navbar';
 
-const DashBoard = () => {
+const DashBoard = ({ onNavigate }) => {
   return (
     <main className='dashboard-container'>
         <Navbar />
@@ -21,7 +21,15 @@ const DashBoard = () => {
                 <span>0%</span>
                 <div className="chart eng-bar">
                     <div className="progress"></div>
-                    <a href="">Take a test <i className="fa-solid fa-pen"></i></a>
+                    <a 
+                      href="#" 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onNavigate('test', { subject: 'English' });
+                      }}
+                    >
+                      Take a test <i className="fa-solid fa-pen"></i>
+                    </a>
                 </div>
             </div>
             <div className="dash-card">
@@ -31,7 +39,15 @@ const DashBoard = () => {
                 <span>0%</span>
                 <div className="chart math-bar">
                     <div className="progress"></div>
-                    <a href="">Take a test <i className="fa-solid fa-pen"></i></a>
+                    <a 
+                      href="#" 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onNavigate('test', { subject: 'Mathematics' });
+                      }}
+                    >
+                      Take a test <i className="fa-solid fa-pen"></i>
+                    </a>
                 </div>
             </div>
             <div className="dash-card">
@@ -41,7 +57,15 @@ const DashBoard = () => {
                 <span>50%</span>
                 <div className="chart comp-bar">
                     <div className="progress"></div>
-                    <a href="">Take a test <i className="fa-solid fa-pen"></i></a>
+                    <a 
+                      href="#" 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onNavigate('test', { subject: 'Computer Science' });
+                      }}
+                    >
+                      Take a test <i className="fa-solid fa-pen"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -138,7 +162,16 @@ const DashBoard = () => {
                             </div>
                         </div>
                         <div className="upcoming-bottom">
-                            <a href="#" className="watch-btn purple-text">WATCH A VIDEO <i className="fa-solid fa-tv"></i></a>
+                            <a 
+                              href="#" 
+                              className="watch-btn purple-text"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                onNavigate('learn');
+                              }}
+                            >
+                              WATCH A VIDEO <i className="fa-solid fa-tv"></i>
+                            </a>
                         </div>
                     </div>
                     
@@ -153,7 +186,16 @@ const DashBoard = () => {
                             </div>
                         </div>
                         <div className="upcoming-bottom">
-                            <a href="#" className="watch-btn orange-text">WATCH A VIDEO <i className="fa-solid fa-tv"></i></a>
+                            <a 
+                              href="#" 
+                              className="watch-btn orange-text"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                onNavigate('learn');
+                              }}
+                            >
+                              WATCH A VIDEO <i className="fa-solid fa-tv"></i>
+                            </a>
                         </div>
                     </div>
                     
@@ -168,7 +210,16 @@ const DashBoard = () => {
                             </div>
                         </div>
                         <div className="upcoming-bottom">
-                            <a href="#" className="watch-btn green-text">WATCH A VIDEO <i className="fa-solid fa-tv"></i></a>
+                            <a 
+                              href="#" 
+                              className="watch-btn green-text"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                onNavigate('learn');
+                              }}
+                            >
+                              WATCH A VIDEO <i className="fa-solid fa-tv"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
