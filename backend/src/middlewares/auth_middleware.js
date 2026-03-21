@@ -9,7 +9,7 @@ export const auth_middleware = (req, res, next)=>{
     try{
         
         //verify token
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'my_super_secure_fallback_key_123!');
         req.user = decoded;
         console.log(`user: ${req.user.id}, ${req.user.role}`)
         next();

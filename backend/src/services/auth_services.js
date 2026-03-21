@@ -88,7 +88,7 @@ export const login_service = async (data)=> {
             email: existing_user.email,
             role: existing_user.role
         },
-        process.env.JWT_SECRET,
+        process.env.JWT_SECRET || 'my_super_secure_fallback_key_123!',
         {expiresIn: '1h'}
     )
     return token;
