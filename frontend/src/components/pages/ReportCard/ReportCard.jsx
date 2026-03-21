@@ -17,7 +17,7 @@ function ReportCard({ onNavigate }) {
       id: "math",
       title: "Mathematics",
       color: "#F2994A",
-      image: "src/assets/images/confused student.jpeg", // Attempting a safe placeholder, normally we map based on assets
+      image: "/assets/images/confused student.jpeg", // Attempting a safe placeholder, normally we map based on assets
       icon: FaCalculator,
       scores: [
         { label: "Number and Numeration", score: 190, total: 200 },
@@ -31,7 +31,7 @@ function ReportCard({ onNavigate }) {
       id: "english",
       title: "English Language",
       color: "#2D9CDB",
-      image: "src/assets/images/book stack.jpeg",
+      image: "/assets/images/book stack.jpeg",
       icon: FaBookOpen,
       scores: [
         { label: "Lexis and Structures", score: 190, total: 200 },
@@ -45,7 +45,7 @@ function ReportCard({ onNavigate }) {
       id: "cs",
       title: "Computer Science",
       color: "#27AE60",
-      image: "src/assets/images/purple big guy.jpeg",
+      image: "/assets/images/purple big guy.jpeg",
       icon: FaDesktop,
       scores: [
         { label: "Fundamentals of Computing", score: 180, total: 200 },

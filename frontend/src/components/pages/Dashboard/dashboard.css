@@ -39,7 +39,7 @@
     padding: 20px;
     margin: 20px auto;
     border-radius: 40px;
-    background-image: url('src/assets/images/dashboard.jpeg');
+    background-image: url('/assets/images/dashboard.jpeg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

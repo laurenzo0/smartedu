@@ -27,7 +27,7 @@ const LearnScreen = ({ onNavigate }) => {
       name: "Computer Science",
       topics: 6,
       subTopics: 18,
-      image: "src/assets/images/purple big guy.jpeg",
+      image: "/assets/images/purple big guy.jpeg",
       route: "computer-science"
     },
     {
@@ -35,7 +35,7 @@ const LearnScreen = ({ onNavigate }) => {
       name: "Mathematics",
       topics: 6,
       subTopics: 21,
-      image: "src/assets/images/teacher with graph.jpeg",
+      image: "/assets/images/teacher with graph.jpeg",
       route: "maths"
     },
     {
@@ -43,7 +43,7 @@ const LearnScreen = ({ onNavigate }) => {
       name: "English",
       topics: 5,
       subTopics: 19,
-      image: "src/assets/images/group english.jpeg",
+      image: "/assets/images/group english.jpeg",
       route: "english"
     },
   ];

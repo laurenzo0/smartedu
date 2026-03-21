@@ -113,7 +113,7 @@ function MathsTest({ onNavigate, subject = "Mathematics", topic = "Number & Nume
               <p>How well do you know how to work with numbers?</p>
             </div>
             <div className="test-header-image">
-              <img src="/src/assets/images/student-kid.avif" alt="Illustration" />
+              <img src="/assets/images/student-kid.avif" alt="Illustration" />
             </div>
           </div>
 

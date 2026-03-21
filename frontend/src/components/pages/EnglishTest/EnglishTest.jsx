@@ -161,7 +161,7 @@ function EnglishTest({ onNavigate, subject = "Mathematics", topic = "Number & Nu
               <p className="essay-notice">N.B. - Questions 51-60 are <strong>essay questions</strong> in which answers would be typed.</p>
             </div>
             <div className="test-header-image">
-              <img src="/src/assets/images/student-kid.avif" alt="Illustration" />
+              <img src="/assets/images/student-kid.avif" alt="Illustration" />
             </div>
           </div>
 

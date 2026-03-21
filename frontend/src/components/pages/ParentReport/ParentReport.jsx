@@ -19,7 +19,7 @@ const ParentReport = () => {
             </div>
           </div>
           <div className="header-illustration">
-             <img src="src/assets/images/desk study.jpeg" alt="Student studying" />
+             <img src="/assets/images/desk study.jpeg" alt="Student studying" />
           </div>
         </div>
       </div>
@@ -73,15 +73,15 @@ const ParentReport = () => {
         <h3>SEE YOUR PERFORMANCE IN EACH SUBJECT</h3>
         <div className="subject-cards">
           <div className="subject-card">
-            <img src="src/assets/images/english-lang.png" alt="English" />
+            <img src="/assets/images/english-lang.png" alt="English" />
             <h4>English Language</h4>
           </div>
           <div className="subject-card">
-            <img src="src/assets/images/maths-lang.png" alt="Math" />
+            <img src="/assets/images/maths-lang.png" alt="Math" />
             <h4>Mathematics</h4>
           </div>
           <div className="subject-card">
-            <img src="src/assets/images/csc.png" alt="Computer Science" />
+            <img src="/assets/images/csc.png" alt="Computer Science" />
             <h4>Computer Science</h4>
           </div>
         </div>

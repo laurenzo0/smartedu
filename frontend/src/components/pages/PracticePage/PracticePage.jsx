@@ -16,17 +16,17 @@ function PracticePage({ onNavigate }) {
 
             <div className="subject-section">
                 <div className="box eng-lang">
-                    <img src="src/assets/images/book stack.jpeg" alt="book stack" className="eng-img" />
+                    <img src="/assets/images/book stack.jpeg" alt="book stack" className="eng-img" />
                     <h2>English Language</h2>
                     <button className="eng-btn" onClick={() => onNavigate("test", { subject: "English Language" })}>Take a full test <i className="fa-solid fa-pen"></i></button>
                 </div>
                 <div className="box maths">
-                    <img src="src/assets/images/confused student.jpeg" alt="confused student" className="math-img" />
+                    <img src="/assets/images/confused student.jpeg" alt="confused student" className="math-img" />
                     <h2>Mathematics</h2>
                     <button className="math-btn" onClick={() => onNavigate("test", { subject: "Mathematics" })}>Take a full test <i className="fa-solid fa-pen"></i></button>
                 </div>
                 <div className="box comp-sci">
-                    <img src="src/assets/images/purple big guy.jpeg" alt="purple big guy" className="comp-img" />
+                    <img src="/assets/images/purple big guy.jpeg" alt="purple big guy" className="comp-img" />
                     <h2>Computer Science</h2>
                     <button className="comp-btn" onClick={() => onNavigate("test", { subject: "Computer Science" })}>Take a full test <i className="fa-solid fa-pen"></i></button>
                 </div>
@@ -38,7 +38,7 @@ function PracticePage({ onNavigate }) {
                 <div className="card english-section">
                     <h2>ENGLISH</h2>
                     <div className="topics">
-                        <img src="src/assets/images/desk study.jpeg" alt="desk study" className="card-img" />
+                        <img src="/assets/images/desk study.jpeg" alt="desk study" className="card-img" />
                         <ul className="list">
                             <li>Lexis and Structure</li>
                             <li>Oral English</li>
@@ -54,7 +54,7 @@ function PracticePage({ onNavigate }) {
                 <div className="card maths-section">
                     <h2>MATHEMATICS</h2>
                     <div className="topics">
-                        <img src="src/assets/images/numbers.jpeg" alt="numbers" className="card-img" />
+                        <img src="/assets/images/numbers.jpeg" alt="numbers" className="card-img" />
                         <ul className="list">
                             <li>Number and Numeration</li>
                             <li>Algebraic Processes</li>
@@ -71,7 +71,7 @@ function PracticePage({ onNavigate }) {
                 <div className="card comp-sci-section">
                     <h2>COMPUTER SCIENCE</h2>
                     <div className="topics">
-                        <img src="src/assets/images/computer motherboard.jpeg" alt="computer motherboard" className="card-img" />
+                        <img src="/assets/images/computer motherboard.jpeg" alt="computer motherboard" className="card-img" />
                         <ul className="list">
                             <li>Introduction to Computer</li>
                             <li>Computer Hardware</li>

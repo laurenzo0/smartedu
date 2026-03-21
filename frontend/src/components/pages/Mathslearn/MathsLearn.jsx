@@ -13,13 +13,13 @@ const MathsLearn = ({ onNavigate }) => {
                 <p>Master the language, unlock the world. Your words have power.</p>
                 </div>
                 <div className="maths-learn-header-img">
-                <img src="src/assets/images/confused student.jpeg" alt="confused student" className='maths-learn-img' />
+                <img src="/assets/images/confused student.jpeg" alt="confused student" className='maths-learn-img' />
                 </div>
             </div>
             {/* maths-learn-content styling here */}
             <div className="maths-learn-content">
                 <div className="maths-box ">
-                    <img src="src/assets/images/numbers.jpeg" alt="numbers" />
+                    <img src="/assets/images/numbers.jpeg" alt="numbers" />
                     <h3>Numbers and Numeration</h3>
                     <ul className="maths-list">
                         <li>Number Bases</li>
@@ -30,7 +30,7 @@ const MathsLearn = ({ onNavigate }) => {
                     </ul>
                 </div>
                 <div className="maths-box">
-                    <img src="src/assets/images/equation.jpeg" alt="equation" />
+                    <img src="/assets/images/equation.jpeg" alt="equation" />
                     <h3>Algebraic Processes</h3>
                     <ul className="maths-list">
                         <li>Algebraic Processes</li>
@@ -41,7 +41,7 @@ const MathsLearn = ({ onNavigate }) => {
                     </ul>
                 </div>
                 <div className="maths-box">
-                    <img src="src/assets/images/learners.jpeg" alt="learners" />
+                    <img src="/assets/images/learners.jpeg" alt="learners" />
                     <h3>Geometry and Trigonometry</h3>
                     <ul className="maths-list">
                         <li>Plane Geometry</li>
@@ -51,7 +51,7 @@ const MathsLearn = ({ onNavigate }) => {
                     </ul>
                 </div>
                 <div className="maths-box">
-                    <img src="src/assets/images/algebra.jpeg" alt="algebra" />
+                    <img src="/assets/images/algebra.jpeg" alt="algebra" />
                     <h3>Calculus</h3>
                     <ul className="maths-list">
                         <li>Limits and Continuity</li>
@@ -61,7 +61,7 @@ const MathsLearn = ({ onNavigate }) => {
                     </ul>
                 </div>
                 <div className="maths-box">
-                    <img src="src/assets/images/teacher with graph.jpeg" alt="teacher with graph" />
+                    <img src="/assets/images/teacher with graph.jpeg" alt="teacher with graph" />
                     <h3>Statistics and Probability</h3>
                     <ul className="maths-list">
                         <li>Data Representation</li>

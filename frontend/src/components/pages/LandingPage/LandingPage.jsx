@@ -26,7 +26,7 @@ function LandingPage({ onNavigate }) {
                     
                     <div className="hero-action">
                         <img 
-                            src="src/assets/images/arrow-thick-thin-down-svgrepo-com.svg" 
+                            src="/assets/images/arrow-thick-thin-down-svgrepo-com.svg" 
                             alt="arrow" 
                             className="green-arrow" 
                         />
@@ -39,7 +39,7 @@ function LandingPage({ onNavigate }) {
                 <div className="hero-right">
                     <div className="purple-shape">
                         <img 
-                            src="src/assets/images/smiling-boy.png" 
+                            src="/assets/images/smiling-boy.png" 
                             alt="Smiling student" 
                             className="hero-image" 
                         />
@@ -60,14 +60,14 @@ function LandingPage({ onNavigate }) {
                         </p>
                     </div>
                     <div className="feature-image right-image">
-                        <img src="src/assets/images/WhatsApp Image 2026-03-13 at 14.15.23.jpeg" alt="Free Fun Effective" />
+                        <img src="/assets/images/WhatsApp Image 2026-03-13 at 14.15.23.jpeg" alt="Free Fun Effective" />
                     </div>
                 </div>
 
                 {/* Feature 2 */}
                 <div className="feature-row reverse">
                     <div className="feature-image left-image">
-                        <img src="src/assets/images/WhatsApp Image 2026-03-13 at 14.15.32.jpeg" alt="Stay Motivated" />
+                        <img src="/assets/images/WhatsApp Image 2026-03-13 at 14.15.32.jpeg" alt="Stay Motivated" />
                     </div>
                     <div className="feature-text">
                         <h2>Stay Motivated</h2>
@@ -89,14 +89,14 @@ function LandingPage({ onNavigate }) {
                         </p>
                     </div>
                     <div className="feature-image right-image">
-                        <img src="src/assets/images/WhatsApp Image 2026-03-13 at 14.15.14.jpeg" alt="Personalized Learning" />
+                        <img src="/assets/images/WhatsApp Image 2026-03-13 at 14.15.14.jpeg" alt="Personalized Learning" />
                     </div>
                 </div>
 
                 {/* Feature 4 */}
                 <div className="feature-row reverse">
                     <div className="feature-image left-image">
-                        <img src="src/assets/images/WhatsApp Image 2026-03-13 at 14.15.46.jpeg" alt="Innovative Learning" />
+                        <img src="/assets/images/WhatsApp Image 2026-03-13 at 14.15.46.jpeg" alt="Innovative Learning" />
                     </div>
                     <div className="feature-text">
                         <h2>Innovative and Effective<br/>Learning</h2>

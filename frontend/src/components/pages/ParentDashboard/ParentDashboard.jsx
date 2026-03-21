@@ -69,7 +69,7 @@ const ParentDashboard = ({ onNavigate, access_code }) => {
             <h1>Welcome Back.</h1>
           </div>
           <div className="banner-illustration">
-             <img src="frontend/src/assets/images/dashboard.jpeg" alt="Dashboard" />
+             <img src="/assets/images/dashboard.jpeg" alt="Dashboard" />
           </div>
         </section>
 

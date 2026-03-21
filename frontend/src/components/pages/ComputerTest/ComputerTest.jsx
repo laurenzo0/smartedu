@@ -112,7 +112,7 @@ function ComputerTest({ onNavigate, subject = "Computer Science", topic = "Funda
               <p>If you want to be a tech bro/sis, here's your head start.</p>
             </div>
             <div className="test-header-image">
-              <img src="/src/assets/images/student-kid.avif" alt="Illustration" />
+              <img src="/assets/images/student-kid.avif" alt="Illustration" />
             </div>
           </div>
 

@@ -18,13 +18,13 @@ function Learnpage({ onNavigate, subject = "Computer Science" }) {
         "Classification of Computers",
         "Components of a Computer",
       ],
-      image: "src/assets/images/computer motherboard.jpeg",
+      image: "/assets/images/computer motherboard.jpeg",
     },
     {
       id: 2,
       title: "Computer Architecture & Operations",
       items: ["The CPU", "Memory Unit", "Logic Gates", "Number Systems"],
-      image: "src/assets/images/blockstack.jpeg",
+      image: "/assets/images/blockstack.jpeg",
     },
     {
       id: 3,
@@ -34,25 +34,25 @@ function Learnpage({ onNavigate, subject = "Computer Science" }) {
         "Application Software",
         "Database Management Systems (DBMS)",
       ],
-      image: "src/assets/images/network.jpeg",
+      image: "/assets/images/network.jpeg",
     },
     {
       id: 4,
       title: "Networking & The Internet",
       items: ["Networking Basics", "Internet Protocols", "Web Design"],
-      image: "src/assets/images/network.jpeg",
+      image: "/assets/images/network.jpeg",
     },
     {
       id: 5,
       title: "Programming Logic",
       items: ["Algorithms", "Flowcharts", "High-Level Languages"],
-      image: "src/assets/images/ict circuit.jpeg",
+      image: "/assets/images/ict circuit.jpeg",
     },
     {
       id: 6,
       title: "Data Handling & Security",
       items: ["Data Representation", "Computer Ethics & Security"],
-      image: "src/assets/images/motherboard.jpeg",
+      image: "/assets/images/motherboard.jpeg",
     },
   ];
 
@@ -129,7 +129,7 @@ function Learnpage({ onNavigate, subject = "Computer Science" }) {
           <p>{heroInfo.para}</p>
         </div>
         <div className="hero-image">
-          <img src="src/assets/images/purple big guy.jpeg" alt="purple big guy" style={{width: "60%", height: "60%"}} />
+          <img src="/assets/images/purple big guy.jpeg" alt="purple big guy" style={{width: "60%", height: "60%"}} />
         </div>
       </div>
 

@@ -14,13 +14,13 @@ const EngLearn = ({ onNavigate }) => {
                 <p>Master the language, unlock the world. Your words have power.</p>
                 </div>
                 <div className="eng-learn-header-img">
-                <img src="src/assets/images/book stack.jpeg" alt="book stack" className='eng-learn-img' />
+                <img src="/assets/images/book stack.jpeg" alt="book stack" className='eng-learn-img' />
                 </div>
             </div>
             {/* eng-learn-content styling here */}
             <div className="eng-learn-content">
                 <div className="eng-box ">
-                    <img src="src/assets/images/lesson.jpeg" alt="lesson" />
+                    <img src="/assets/images/lesson.jpeg" alt="lesson" />
                     <h3>Lexis and Structure</h3>
                     <ul className="eng-list">
                         <li>Synonyms and Antonyms</li>
@@ -31,7 +31,7 @@ const EngLearn = ({ onNavigate }) => {
                     </ul>
                 </div>
                 <div className="eng-box">
-                    <img src="src/assets/images/group english.jpeg" alt="group english" />
+                    <img src="/assets/images/group english.jpeg" alt="group english" />
                     <h3>Oral English</h3>
                     <ul className="eng-list">
                         <li>Vowels and Consonants</li>
@@ -42,7 +42,7 @@ const EngLearn = ({ onNavigate }) => {
                     </ul>
                 </div>
                 <div className="eng-box">
-                    <img src="src/assets/images/study.jpeg" alt="study" />
+                    <img src="/assets/images/study.jpeg" alt="study" />
                     <h3>Comprehension and Summary</h3>
                     <ul className="eng-list">
                         <li>Reading Comprehension</li>
@@ -52,7 +52,7 @@ const EngLearn = ({ onNavigate }) => {
                     </ul>
                 </div>
                 <div className="eng-box">
-                    <img src="src/assets/images/desk study.jpeg" alt="desk study" />
+                    <img src="/assets/images/desk study.jpeg" alt="desk study" />
                     <h3>Essay Writing</h3>
                     <ul className="eng-list">
                         <li>Letter Writing</li>
@@ -63,7 +63,7 @@ const EngLearn = ({ onNavigate }) => {
                     </ul>
                 </div>
                 <div className="eng-box">
-                    <img src="src/assets/images/student group.jpeg" alt="student group" />
+                    <img src="/assets/images/student group.jpeg" alt="student group" />
                     <h3>Literature-in-English</h3>
                     <ul className="eng-list">
                         <li>Poetry</li>
