@@ -33,8 +33,8 @@ app.use('/api-docs', swaggerUi.serve, swaggerUiSetup);
 //enable CORS
 app.use(cors_middleware);
 
-//apply api rate limit
-app.use(api_rate_limit);
+//apply api rate limit (temporarily disabled to fix Render 429 errors)
+// app.use(api_rate_limit);
 
 //test routes
 app.get('/health', (req, res) => {
