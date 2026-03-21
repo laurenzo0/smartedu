@@ -1,5 +1,4 @@
 import "./StudentCard.css";
-import mathguru from "../../../assets/images/mathguru.png"
 
 function StudentCard(){
   return(
@@ -21,7 +20,7 @@ function StudentCard(){
       </div>
 
       <div className="mathguru-img">
-        <img src={mathguru} alt="student reading" width={"100px"}/>
+        <img src="/assets/images/mathguru.png" alt="student reading" width={"100px"}/>
       </div>
 
     </div>
