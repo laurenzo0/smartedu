@@ -54,7 +54,7 @@ function PracticePage({ onNavigate }) {
                 <div className="card maths-section">
                     <h2>MATHEMATICS</h2>
                     <div className="topics">
-                        <img src="frontend/src/assets/images/numbers.jpeg" alt="numbers" className="card-img" />
+                        <img src="" alt="numbers" className="card-img" />
                         <ul className="list">
                             <li>Number and Numeration</li>
                             <li>Algebraic Processes</li>
