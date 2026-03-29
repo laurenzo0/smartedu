@@ -10,8 +10,10 @@ import {
   FaBookOpen,
   FaDesktop
 } from "react-icons/fa";
+import { useUser } from "../../../contexts/UserContext";
 
 function ReportCard({ onNavigate }) {
+  const { user } = useUser();
   const subjects = [
     {
       id: "math",
@@ -86,7 +88,7 @@ function ReportCard({ onNavigate }) {
           <div className="user-profile-card">
             <div className="avatar-placeholder"></div>
             <div className="user-details">
-              <h2>John, Aragon</h2>
+              <h2>{user ? `${user.last_name}, ${user.first_name}` : 'Student'}</h2>
               <p className="detail-row">Date of Birth: <span>March 04, 2006</span></p>
               <p className="detail-row">Test Taken: <span>March 04, 2026</span></p>
             </div>

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Signup.css";
 import { FaArrowLeft } from "react-icons/fa";
-import { registerUser } from "../../../services/api";
+import { registerUser, loginUser } from "../../../services/api";
+import { useUser } from "../../../contexts/UserContext";
 
 function Signup({ onNavigate }) {
   const [formData, setFormData] = useState({
@@ -16,11 +17,11 @@ function Signup({ onNavigate }) {
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const { login } = useUser();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing again
     if (error) setError("");
   };
 
@@ -39,13 +40,40 @@ function Signup({ onNavigate }) {
       return;
     }
 
-    // Bypass backend completely as requested and go straight to the dashboard
-    if (formData.role === "parent") {
-      onNavigate("parent-dashboard");
-    } else {
-      onNavigate("dashboard");
+    setLoading(true);
+    try {
+      // Step 1: Register user in the database
+      await registerUser(formData);
+
+      // Step 2: Auto-login to get the JWT token so we can go straight to the dashboard
+      const token = await loginUser({ email: formData.email, password: formData.password });
+      login(token); // Store in context + localStorage
+
+      if (formData.role === "parent") {
+        onNavigate("parent-dashboard");
+      } else {
+        onNavigate("dashboard");
+      }
+    } catch (err) {
+      // If rate-limited or server error, allow access with a warning
+      const isServerIssue = err.message?.includes("429") || err.message?.includes("500") || err.message?.includes("503");
+      if (isServerIssue) {
+        setError("Backend is temporarily unavailable. Proceeding in demo mode.");
+        setTimeout(() => {
+          if (formData.role === "parent") {
+            onNavigate("parent-dashboard");
+          } else {
+            onNavigate("dashboard");
+          }
+        }, 1500);
+      } else {
+        setError(err.message || "Registration failed. Please try again.");
+      }
+    } finally {
+      setLoading(false);
     }
   };
+
 
   return (
     <div className="signup-container">
@@ -53,7 +81,7 @@ function Signup({ onNavigate }) {
       <div className="signup-left">
         <header className="signup-header">
           <div className="logo-section">
-             <img src="src/assets/logo2.png" alt="SmartEdu Logo" />
+             <img src="frontend/src/assets/logo2.png" alt="SmartEdu Logo" />
           </div>
           <button className="back-arrow" onClick={() => onNavigate("landing")}>
             <FaArrowLeft />

@@ -26,11 +26,12 @@
 
 .maths-learn-container {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #eeecec;
     scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
     overflow-x: hidden;
     max-width: 100%;
 }
@@ -140,7 +141,8 @@
     .maths-learn-header {
         flex-direction: column;
         text-align: center;
-        padding: 30px 20px;
+        padding: 20px 10px;
+        margin: 10px;
     }
     .maths-learn-header-content h2 {
         font-size: 8vmin;
@@ -151,16 +153,25 @@
     .maths-learn-header-img {
         max-width: 100%;
     }
-    .maths-box {
-        min-width: 100%;
-        padding: 20px;
-    }
-    .maths-box img {
-        height: 150px;
-        object-fit: contain;
+    .maths-learn-header-img img {
+        max-width: 200px;
+        height: auto;
     }
     .maths-learn-content {
-        width: 100%;
+        flex-direction: column;
         padding: 10px;
+        margin: 10px;
+        gap: 15px;
+    }
+    .maths-box {
+        min-width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        min-height: auto;
+    }
+    .maths-box img {
+        max-width: 100%;
+        height: 150px;
+        object-fit: contain;
     }
 }

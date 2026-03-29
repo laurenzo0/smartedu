@@ -1,25 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./learnscreen.css";
 import Navbar from "../../reusableUi/Navbar/Navbar";
+import { useUser } from "../../../contexts/UserContext";
 import { 
   FaCheckCircle, 
   FaLock, 
   FaPlayCircle 
 } from "react-icons/fa";
 
-const LearnScreen = ({ onNavigate }) => {
-  const [activeTopic, setActiveTopic] = useState(3); // Default to Lesson 3: Stress Patterns
+const LearnScreen = ({ onNavigate, topics: paramTopics, courseTitle }) => {
+  const { user } = useUser();
   const [selectedOption, setSelectedOption] = useState(null);
   const [notes, setNotes] = useState("");
 
-  const topics = [
+  const defaultTopics = [
     { id: 1, title: "1. Synonyms and Antonyms", status: "completed", videoUrl: "https://www.youtube.com/embed/-WymV5VC88U?si=AlcmWGkpTxSefMHC" },
     { id: 2, title: "2. Rhymes", status: "completed", videoUrl: "https://www.youtube.com/embed/_1mKBtLVb3A?si=vd5HX580wHwYVF2N" },
     { id: 3, title: "3. Stress Patterns", status: "active", videoUrl: "https://www.youtube.com/embed/VDGxFRAatp8?si=rHOO99wXfIPKIPzt" },
     { id: 4, title: "4. Phonetic Symbols", status: "locked", videoUrl: "https://www.youtube.com/embed/fyVefygZnu4?si=nSveNXA251YWCKam" },
   ];
 
-  const currentTopic = topics.find(t => t.id === activeTopic);
+  const topics = paramTopics && paramTopics.length > 0 ? paramTopics : defaultTopics;
+
+  const getInitialActiveTopic = () => {
+    const active = topics.find(t => t.status === "active" || t.status === "completed") || topics[0];
+    return active ? active.id : 1;
+  };
+
+  const [activeTopic, setActiveTopic] = useState(getInitialActiveTopic());
+
+  useEffect(() => {
+    setActiveTopic(getInitialActiveTopic());
+  }, [topics]);
+
+  const currentTopic = topics.find(t => t.id === activeTopic) || topics[0];
 
   const subjects = [
     {
@@ -54,8 +68,9 @@ const LearnScreen = ({ onNavigate }) => {
 
       <section className="learn-header">
         <div className="welcome-text">
-          <h1>Hi, Aragon</h1>
+          <h1>Hi, {user?.first_name || 'Student'}</h1>
           <p>What do you want to <strong>Learn Today ?</strong></p>
+          {courseTitle && <h2 style={{ color: '#0056D2', marginTop: '10px' }}>{courseTitle}</h2>}
           <p>Find your path, measure success, and unlock potential continuously.</p>
         </div>
 

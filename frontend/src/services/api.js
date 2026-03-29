@@ -1,4 +1,35 @@
-const API_BASE = import.meta.env.VITE_API_URL || "/api";
+const API_BASE = import.meta.env.VITE_API_URL || "https://smartedu-cu15.onrender.com/api";
+
+/**
+ * Login an existing user.
+ * POST /api/auth/login
+ * @param {{ email, password }} credentials
+ * @returns {Promise<string>} JWT token from the server
+ */
+export async function loginUser(credentials) {
+  const res = await fetch(`${API_BASE}/auth/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(credentials),
+  });
+
+  const text = await res.text();
+  let data = {};
+  if (text) {
+    try {
+      data = JSON.parse(text);
+    } catch {
+      throw new Error("Server returned an invalid response.");
+    }
+  }
+
+  if (!res.ok) {
+    throw new Error(data.message || `Login failed (status ${res.status}).`);
+  }
+
+  // The backend returns { message: "success", data: <token string> }
+  return data.data;
+}
 
 /**
  * Register a new user.

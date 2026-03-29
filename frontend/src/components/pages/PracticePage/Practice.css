@@ -83,7 +83,7 @@
     color: var(--darker-blue-color);
     text-align: center;
     margin: 30px;
-    font-size: 5vmin;
+    font-size: 4vmin;
     font-weight: bold;
 }
 
@@ -100,8 +100,8 @@
 
 .box{
     flex: 1;
-    min-width: 300px;
-    max-width: 400px;
+    min-width: 250px;
+    max-width: 350px;
     padding: 20px;
     cursor: pointer;
     background-color: var(--section-color);
@@ -114,10 +114,14 @@
 
 .box img{
     object-fit: contain;
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 200px;
+    max-height: 200px;
     display: flex;
     margin: 10px auto;
+}
+
+.box .math{
+    background: #eeecec;
 }
 
 .box:hover{
@@ -138,7 +142,7 @@
     color: var(--pri-blue-color);
 }
 
-.maths h2{
+.math h2{
     color: var(--pri-orange-color);
 }
 
@@ -275,7 +279,7 @@
         font-size: 8vmin;
     }
     .header-text {
-        font-size: 1.5rem;
+        font-size: 1.0rem;
         margin: 20px 15px;
     }
     .box {
@@ -298,5 +302,9 @@
     }
     .practice-container {
         padding: 0;
+    }
+
+    .floating-chat{
+     margin-bottom: 50px;   
     }
 }

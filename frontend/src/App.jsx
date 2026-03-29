@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { UserProvider } from "./contexts/UserContext";
 import Sidebar from "./components/reusableUi/Sidebar/Sidebar";
 import NarrowSidebar from "./components/reusableUi/Sidebar/NarrowSidebar";
 import Navbar from "./components/reusableUi/Navbar/Navbar";
@@ -60,7 +61,7 @@ function App() {
           <div className="app-layout">
             <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
             <div className="main-section">
-              <LearnScreen onNavigate={handleNavigate} />
+              <LearnScreen onNavigate={handleNavigate} {...params} />
             </div>
           </div>
         );
@@ -211,9 +212,9 @@ function App() {
   };
 
   return (
-    <>
+    <UserProvider>
       {renderPage()}
-    </>
+    </UserProvider>
   );
 }
 

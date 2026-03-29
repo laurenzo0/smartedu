@@ -2,15 +2,17 @@ import React from 'react';
 import './Settings.css';
 import Navbar from '../../reusableUi/Navbar/Navbar';
 import { FaFacebook, FaGoogle, FaEnvelope } from 'react-icons/fa';
+import { useUser } from '../../../contexts/UserContext';
 
 const Settings = ({ onNavigate }) => {
+  const { user } = useUser();
   return (
     <main className="settings-container">
       <Navbar />
       
       <div className="settings-banner">
         <div className="banner-content">
-          <h2>Welcome Back, Aragon</h2>
+          <h2>Welcome Back, {user?.first_name || 'Student'}</h2>
           <p>Knowledge is the key to tomorrow, so keep growing and exploring every day!</p>
         </div>
       </div>
@@ -22,7 +24,7 @@ const Settings = ({ onNavigate }) => {
             <div className="form-row">
               <div className="form-group">
                 <label>First Name</label>
-                <input type="text" placeholder="Aragon" />
+                <input type="text" placeholder={user?.first_name || 'First Name'} />
               </div>
               <div className="form-group">
                 <label>Last Name</label>
@@ -31,7 +33,7 @@ const Settings = ({ onNavigate }) => {
             </div>
             <div className="form-group">
               <label>Email Address</label>
-              <input type="email" placeholder="Aragon123@gmail.com" />
+              <input type="email" placeholder={user?.email || 'email@example.com'} />
             </div>
             <div className="form-group">
               <label>Focus Area</label>

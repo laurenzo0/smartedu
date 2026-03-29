@@ -26,11 +26,12 @@
 
 .eng-learn-container {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #eeecec;
     scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
     overflow-x: hidden;
     max-width: 100%;
 }
@@ -157,7 +158,8 @@
     .eng-learn-header {
         flex-direction: column;
         text-align: center;
-        padding: 30px 20px;
+        padding: 20px 10px;
+        margin: 10px;
     }
     .eng-learn-header-content h2 {
         font-size: 8vmin;
@@ -168,16 +170,26 @@
     .eng-learn-header-img {
         max-width: 100%;
     }
-    .eng-box {
-        min-width: 100%;
-        padding: 20px;
-    }
-    .eng-box img {
-        height: 150px;
+    .eng-learn-header-img img {
+        max-width: 200px;
+        height: auto;
     }
     .eng-learn-content {
-        width: 100%;
+        flex-direction: column;
         padding: 10px;
+        margin: 10px;
+        gap: 15px;
+    }
+    .eng-box {
+        min-width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        min-height: auto;
+    }
+    .eng-box img {
+        max-width: 100%;
+        height: 150px;
+        object-fit: contain;
     }
 }
 

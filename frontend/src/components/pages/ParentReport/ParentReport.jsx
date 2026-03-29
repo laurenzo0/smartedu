@@ -1,8 +1,10 @@
 import React from "react";
 import "./ParentReport.css";
 import Navbar from "../../reusableUi/Navbar/Navbar";
+import { useUser } from "../../../contexts/UserContext";
 
 const ParentReport = () => {
+  const { user } = useUser();
   return (
     <main className="parent-report-container">
       <Navbar />
@@ -13,7 +15,7 @@ const ParentReport = () => {
           <div className="profile-info">
             <div className="profile-pic-placeholder"></div>
             <div className="profile-details">
-              <h3>John, Aragon</h3>
+              <h3>{user ? `${user.last_name}, ${user.first_name}` : 'Student'}</h3>
               <p>Date of Birth: March 04, 2005</p>
               <p>Test Taken: March 04, 2026</p>
             </div>

@@ -1,14 +1,16 @@
 import React from 'react';
 import './dashboard.css';
 import Navbar from '../../reusableUi/Navbar/Navbar';
+import { useUser } from '../../../contexts/UserContext';
 
 const DashBoard = ({ onNavigate }) => {
+  const { user } = useUser();
   return (
     <main className='dashboard-container'>
         <Navbar />
         <div className="dashboard-test">
             <div className="dashboard-test-content">
-            <h2>Welcome back, Aragon</h2>
+            <h2>Welcome back, {user?.first_name || 'Student'}</h2>
             <p>Knowledge is the key to tomorrow, so keep growing and <br /> exploring everyday </p>
             </div>
         </div>

@@ -7,8 +7,10 @@ import {
   FaSlidersH,
   FaCommentDots,
 } from "react-icons/fa";
+import { useUser } from "../../../contexts/UserContext";
 
 function Learnpage({ onNavigate, subject = "Computer Science" }) {
+  const { user } = useUser();
   const computerTopics = [
     {
       id: 1,
@@ -91,11 +93,18 @@ function Learnpage({ onNavigate, subject = "Computer Science" }) {
   const topics = getTopicData();
   const heroInfo = getHeroText();
 
-  const handleTopicClick = (topicTitle) => {
+  const handleTopicClick = (topic) => {
     if (onNavigate) {
-      onNavigate("test", { 
-        subject: subject, 
-        topic: topicTitle 
+      const generatedTopics = topic.items.map((item, index) => ({
+        id: index + 1,
+        title: `${index + 1}. ${item}`,
+        status: index === 0 ? 'completed' : (index === 1 ? 'active' : 'locked'),
+        videoUrl: 'https://www.youtube.com/embed/bAerID24QJ0' // placeholder generic video
+      }));
+
+      onNavigate("learn", { 
+        courseTitle: topic.title, 
+        topics: generatedTopics 
       });
     }
   };
@@ -124,7 +133,7 @@ function Learnpage({ onNavigate, subject = "Computer Science" }) {
       {/* Hero Welcome Section */}
       <div className="learn-hero">
         <div className="hero-text">
-          <span className="greeting">Hi, Aragon</span>
+          <span className="greeting">Hi, {user?.first_name || 'Student'}</span>
           <h1>Welcome to <span className={heroInfo.color}>{heroInfo.title}</span> Class.</h1>
           <p>{heroInfo.para}</p>
         </div>
@@ -139,7 +148,7 @@ function Learnpage({ onNavigate, subject = "Computer Science" }) {
           <div 
             key={topic.id} 
             className="topic-card" 
-            onClick={() => handleTopicClick(topic.title)}
+            onClick={() => handleTopicClick(topic)}
             style={{ cursor: "pointer" }}
           >
             <div className="topic-image">

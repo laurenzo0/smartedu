@@ -1,6 +1,8 @@
 import "./StudentCard.css";
+import { useUser } from "../../../contexts/UserContext";
 
 function StudentCard(){
+  const { user } = useUser();
   return(
     
     <div >
@@ -14,7 +16,7 @@ function StudentCard(){
       <div className="avatar"></div>
 
       <div className="student-info">
-        <h3>John, Aragon</h3>
+        <h3>{user ? `${user.last_name}, ${user.first_name}` : 'Student'}</h3>
         <p>One of nine: Score: 240/300</p>
         <p>Test Taken: 300</p>
       </div>

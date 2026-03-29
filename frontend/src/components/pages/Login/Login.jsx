@@ -1,19 +1,37 @@
 import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import "./Login.css";
+import { loginUser } from "../../../services/api";
+import { useUser } from "../../../contexts/UserContext";
 
 function Login({ onNavigate }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const { login } = useUser();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
-    
-    // Bypass backend completely as requested and go straight to the dashboard
-    onNavigate("dashboard");
+    setLoading(true);
+
+    try {
+      const token = await loginUser({ email, password });
+      login(token);
+      onNavigate("dashboard");
+    } catch (err) {
+      // If rate-limited or server error, allow access with a warning
+      const isServerIssue = err.message?.includes("429") || err.message?.includes("500") || err.message?.includes("503");
+      if (isServerIssue) {
+        setError("Backend is temporarily unavailable. Proceeding in demo mode.");
+        setTimeout(() => onNavigate("dashboard"), 1500);
+      } else {
+        setError(err.message || "Login failed. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -22,7 +40,7 @@ function Login({ onNavigate }) {
       <div className="login-left">
         <header className="login-header">
           <div className="logo-section">
-            <img src="src/assets/logo2.png" alt="SmartEdu Logo" />
+            <img src="frontend/src/assets/logo2.png" alt="SmartEdu Logo" />
           </div>
           <button className="back-arrow" onClick={() => onNavigate("landing")}>
             <FaArrowLeft />
@@ -33,8 +51,8 @@ function Login({ onNavigate }) {
           <h1>Welcome Back</h1>
           <p className="login-prompt">
             Don't Have an Account Yet?{" "}
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="signup-link"
               onClick={(e) => { e.preventDefault(); onNavigate("signup"); }}
             >
@@ -85,8 +103,8 @@ function Login({ onNavigate }) {
             </button>
           </form>
 
-          <a 
-            href="#" 
+          <a
+            href="#"
             className="forgot-password"
             onClick={(e) => { e.preventDefault(); onNavigate("reset-password"); }}
           >
@@ -99,5 +117,3 @@ function Login({ onNavigate }) {
 }
 
 export default Login;
-
-

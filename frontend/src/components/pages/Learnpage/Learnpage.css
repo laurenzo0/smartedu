@@ -5,11 +5,12 @@
 .learn-container {
   padding: 2rem;
   background-color: #F1F4F9;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   font-family: 'Outfit', sans-serif;
+  overflow-y: auto;
   overflow-x: hidden;
   max-width: 100%;
 }
@@ -257,12 +258,38 @@
 
 @media (max-width: 768px) {
   .learn-container {
-    padding: 1.5rem;
+    padding: 1rem;
+    gap: 1.5rem;
   }
-  .topics-grid {
-    grid-template-columns: 1fr;
+  .learn-top-bar {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+  .search-container {
+    width: 100%;
+    max-width: 100%;
+  }
+  .action-icons {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 10px;
+  }
+  .icon-box {
+    flex: 1;
+  }
+  .learn-hero {
+    padding: 2rem 1.5rem;
+  }
+  .hero-text {
+    width: 100%;
   }
   .hero-text h1 {
     font-size: 2rem;
+  }
+  .topics-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }

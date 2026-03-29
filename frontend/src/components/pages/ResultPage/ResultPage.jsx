@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./ResultPage.css";
 import Navbar from "../../reusableUi/Navbar/Navbar";
+import { useUser } from "../../../contexts/UserContext";
 
 function ResultPage({ score = 80, onNavigate, subject, topic, selectedAnswers }) {
+  const { user } = useUser();
   const [offset, setOffset] = useState(628); // 2 * PI * r (r=100) -> approx 628
   
   useEffect(() => {
@@ -28,7 +30,7 @@ function ResultPage({ score = 80, onNavigate, subject, topic, selectedAnswers })
           </div>
 
           <h1 className="congrats-title">Congratulations!</h1>
-          <h2 className="congrats-name">Aragon</h2>
+          <h2 className="congrats-name">{user?.first_name || 'Student'}</h2>
 
           <div className="circle-loader-container">
             <svg className="circular-chart" viewBox="0 0 240 240">

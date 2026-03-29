@@ -1,18 +1,20 @@
 import Navbar from "../../reusableUi/Navbar/Navbar";
 import NarrowSidebar from "../../reusableUi/Sidebar/NarrowSidebar";
 import './Practice.css';
+import { useUser } from "../../../contexts/UserContext";
 
 function PracticePage({ onNavigate }) {
+    const { user } = useUser();
     return (
         <div className="practice-container">
             <Navbar/>
             <div className="practice-test">
                 <div className="practice-test-content">
-                    <h2>Test Yourself, Aragon</h2>
+                    <h2>Test Yourself, {user?.first_name || 'Student'}</h2>
                     <p>How well do you know these subjects? Let's find out!</p>
                 </div>
             </div>
-            <h2 className="header-text"> YOU CAN TEST YOURSELF ON AN ENTIRE SUBJECT</h2>
+            <h3 className="header-text"> YOU CAN TEST YOURSELF ON AN ENTIRE SUBJECT</h3>
 
             <div className="subject-section">
                 <div className="box eng-lang">
@@ -20,7 +22,7 @@ function PracticePage({ onNavigate }) {
                     <h2>English Language</h2>
                     <button className="eng-btn" onClick={() => onNavigate("test", { subject: "English Language" })}>Take a full test <i className="fa-solid fa-pen"></i></button>
                 </div>
-                <div className="box maths">
+                <div className="box math">
                     <img src="/assets/images/confused student.jpeg" alt="confused student" className="math-img" />
                     <h2>Mathematics</h2>
                     <button className="math-btn" onClick={() => onNavigate("test", { subject: "Mathematics" })}>Take a full test <i className="fa-solid fa-pen"></i></button>
@@ -32,7 +34,7 @@ function PracticePage({ onNavigate }) {
                 </div>
             </div>
             
-            <h2 className="header-text"> YOU CAN ALSO TAKE A TEST ON ANY TOPIC IN A SUBJECT</h2>
+            <h3 className="header-text"> YOU CAN ALSO TAKE A TEST ON ANY TOPIC IN A SUBJECT</h3>
 
             <div className="card-container">
                 <div className="card english-section">
